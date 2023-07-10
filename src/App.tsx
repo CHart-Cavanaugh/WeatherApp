@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import './App.scss';
 
 
@@ -12,6 +12,15 @@ function App() {
   const appContent = (
     <></>
   );
+
+
+
+  useEffect(() => {
+
+    (document.getElementById("app-container") as HTMLElement)
+      .style.background = appStatus ? "white" : "$pg-background";
+
+  }, [appStatus])
 
 
 
