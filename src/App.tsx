@@ -7,7 +7,7 @@ function App() {
 
   const [appStatus, setAppStatus] = useState(false);
   const tempContent = (
-    <h1>UNDER CONSTRUCTION</h1>
+    <h1 id="temp-content">status: UNDER_CONSTRUCTION</h1>
   );
   const appContent = (
     <></>
