@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
+import { WeatherInterface } from './components/WeatherInterface';
 
 
 
@@ -10,7 +11,9 @@ function App(): JSX.Element {
     <h2 id="temp-content">status: UNDER_CONSTRUCTION</h2>
   );
   const appContent = (
-    <></>
+    <>
+      <WeatherInterface />
+    </>
   );
 
 
