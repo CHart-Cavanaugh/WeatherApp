@@ -6,7 +6,7 @@ import { WeatherInterface } from './components/WeatherInterface';
 
 function App(): JSX.Element {
 
-  const [appStatus, setAppStatus] = useState(false);
+  const [appStatus, setAppStatus] = useState(true);
   const tempContent = (
     <h2 id="temp-content">status: UNDER_CONSTRUCTION</h2>
   );
@@ -18,12 +18,12 @@ function App(): JSX.Element {
 
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    (document.getElementById("app-container") as HTMLElement)
-      .style.background = appStatus ? "white" : "$pg-background";
+  //   (document.getElementById("app-container") as HTMLElement)
+  //     .style.background = appStatus ? "white" : "$pg-background";
 
-  }, [appStatus])
+  // }, [appStatus]);
 
 
 
