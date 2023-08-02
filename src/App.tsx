@@ -3,7 +3,7 @@ import './App.scss';
 
 
 
-function App() {
+function App(): JSX.Element {
 
   const [appStatus, setAppStatus] = useState(false);
   const tempContent = (
