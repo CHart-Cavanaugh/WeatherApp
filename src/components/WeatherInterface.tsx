@@ -1,4 +1,4 @@
-function WeatherInterface() {
+export function WeatherInterface() {
 
   return (
 

@@ -1,4 +1,4 @@
-function WeatherRequestForm() {
+export function WeatherRequestForm() {
 
   return (
 

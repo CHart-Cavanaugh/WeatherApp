@@ -1,4 +1,4 @@
-function WeatherInformation() {
+export function WeatherInformation() {
 
   return (
 

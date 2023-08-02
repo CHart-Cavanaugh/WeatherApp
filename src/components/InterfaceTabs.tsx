@@ -1,4 +1,4 @@
-function InterfaceTabs() {
+export function InterfaceTabs() {
 
   return (
 
