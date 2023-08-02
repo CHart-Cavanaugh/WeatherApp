@@ -6,7 +6,7 @@ import { WeatherInterface } from './components/WeatherInterface';
 
 function App(): JSX.Element {
 
-  const [appStatus, setAppStatus] = useState(true);
+  const [appStatus, setAppStatus] = useState(false);
   const tempContent = (
     <h2 id="temp-content">status: UNDER_CONSTRUCTION</h2>
   );
