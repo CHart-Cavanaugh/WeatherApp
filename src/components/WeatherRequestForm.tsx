@@ -1,4 +1,4 @@
-export function WeatherRequestForm() {
+export function WeatherRequestForm(): JSX.Element {
 
   return (
 

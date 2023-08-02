@@ -1,4 +1,4 @@
-export function InterfaceTabs() {
+export function InterfaceTabs(): JSX.Element {
 
   return (
 

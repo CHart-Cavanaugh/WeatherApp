@@ -1,4 +1,4 @@
-export function WeatherInformation() {
+export function WeatherInformation(): JSX.Element {
 
   return (
 

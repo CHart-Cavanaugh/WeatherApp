@@ -4,7 +4,7 @@ import { InterfaceTabs } from "./InterfaceTabs";
 
 
 
-export function WeatherInterface() {
+export function WeatherInterface(): JSX.Element {
 
   return (
 
