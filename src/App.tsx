@@ -6,7 +6,7 @@ import { WeatherInterface } from './components/WeatherInterface';
 
 function App(): JSX.Element {
 
-  const [appStatus, setAppStatus] = useState(false);
+  const [appStatus, setAppStatus] = useState(true);
   const tempContent = (
     <h2 id="temp-content">status: UNDER_CONSTRUCTION</h2>
   );
@@ -25,7 +25,8 @@ function App(): JSX.Element {
     if (appStatus) {
 
       (appContainer as HTMLElement).style.background = "hsl(220, 50%, 60%)";
-      (appContainer as HTMLElement).style.border = "25px double hsl(220, 50%, 30%)";
+      if (window.innerHeight >= 768)
+        (appContainer as HTMLElement).style.border = "25px double hsl(220, 50%, 30%)";
       (appContainer as HTMLElement).style.justifyContent = "center";
       (appContainer as HTMLElement).style.alignItems = "center";
 
