@@ -40,7 +40,7 @@ export function InterfaceTabs(): JSX.Element {
     interfaceSidebar.style.display = "none";
     weatherInfo.style.display = "block";
 
-  }
+  };
 
 
 
