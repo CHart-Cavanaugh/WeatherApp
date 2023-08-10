@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 
+
+
 export function InterfaceTabs(): JSX.Element {
 
   const setTabOneActive = () => {
@@ -41,11 +43,13 @@ export function InterfaceTabs(): JSX.Element {
   }
 
 
+
   useEffect(() => {
 
     setTabOneActive();
 
   }, []);
+
 
 
   return (
