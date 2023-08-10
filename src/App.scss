@@ -63,22 +63,7 @@ body {
     #weather-request-form {
 
       background: hsl(40, 50%, 40%);
-
-    }
-
-    #weather-request-form:not(:hover) {
-
       height: 30%;
-      flex-grow: 2;
-      transition: .5s ease-in-out;
-
-    }
-
-    #weather-request-form:hover {
-
-      height: 70%;
-      flex-grow: 2;
-      transition: .5s ease-in-out;
 
     }
 
@@ -87,22 +72,7 @@ body {
     #weather-request-history {
 
       background: hsl(140, 50%, 40%);
-
-    }
-
-    #weather-request-history:not(:hover) {
-
-      height: 30%;
-      flex-grow: 2;
-      transition: .5s ease-in-out;
-
-    }
-
-    #weather-request-history:hover {
-
       height: 70%;
-      flex-grow: 2;
-      transition: .5s ease-in-out;
 
     }
 
@@ -173,12 +143,6 @@ body {
 
 @media (min-width: 768px) {
 
-  // #app-container {
-
-  //   // overflow-y: scroll;
-
-  // }
-
   #weather-interface {
 
     width: 70rem;
@@ -240,6 +204,5 @@ body {
     }
 
   }
-
 
 }
