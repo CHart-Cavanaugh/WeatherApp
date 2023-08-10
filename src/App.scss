@@ -37,7 +37,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 25px double hsl(220, 50%, 30%);
 
 }
 
@@ -142,6 +141,12 @@ body {
 
 
 @media (min-width: 768px) {
+
+  #app-container {
+
+    border: 25px double hsl(220, 50%, 30%);
+
+  }
 
   #weather-interface {
 
