@@ -1,4 +1,4 @@
-import { WeatherRequestForm } from "./WeatherRequestForm";
+import { InterfaceSidebar } from "./InterfaceSidebar";
 import { WeatherInformation } from "./WeatherInformation";
 import { InterfaceTabs } from "./InterfaceTabs";
 
@@ -9,7 +9,7 @@ export function WeatherInterface(): JSX.Element {
   return (
 
     <main id="weather-interface">
-      <WeatherRequestForm />
+      <InterfaceSidebar />
       <WeatherInformation />
       {window.innerWidth < 768 ? <InterfaceTabs /> : null}
     </main>
