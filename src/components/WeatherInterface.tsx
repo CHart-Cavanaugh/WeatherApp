@@ -46,21 +46,43 @@ export function WeatherInterface(): JSX.Element {
 
 
 
-  // useEffect(() => {
+  useEffect(() => {
 
-  //   window.addEventListener("resize", () => {
+    window.addEventListener("resize", () => {
 
-  //     if (window.innerHeight >= 768) {
-  //       showElement("weather-info");
-  //       showElement("weather-request-sidebar");
-  //     } else {
-  //       hideElement("weather-info");
-  //       showElement("weather-request-sidebar");
-  //     }
+      if (window.innerWidth >= 768) {
+        showElement("weather-info");
+        showElement("weather-request-sidebar");
+      } else {
+        hideElement("weather-info");
+        showElement("weather-request-sidebar");
+      }
 
-  //   })
+    });
 
-  // }, []);
+
+
+    return () => {
+
+      window.removeEventListener("resize", () => {
+
+        if (window.innerWidth >= 768) {
+
+          showElement("weather-info");
+          showElement("weather-request-sidebar");
+
+        } else {
+
+          hideElement("weather-info");
+          showElement("weather-request-sidebar");
+
+        }
+
+      })
+
+    };
+
+  }, []);
 
 
 
