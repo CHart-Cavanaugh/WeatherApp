@@ -2,12 +2,17 @@ import { useEffect } from "react";
 
 
 
-export function InterfaceTabs(): JSX.Element {
+interface ChildProps {
+  showElement: (elementName: string) => void,
+  hideElement: (elementName: string) => void,
+};
+
+
+
+export function InterfaceTabs(props: ChildProps): JSX.Element {
 
   const setTabOneActive = () => {
 
-    const interfaceSidebar: HTMLElement = (document.getElementById("weather-request-sidebar") as HTMLElement);
-    const weatherInfo: HTMLElement = (document.getElementById("weather-info") as HTMLElement);
     const interfaceTabOne: HTMLElement = document.getElementById("interface-tab-1") as HTMLElement;
     const interfaceTabTwo: HTMLElement = (document.getElementById("interface-tab-2") as HTMLElement);
     const activeBg: string = "hsl(280, 70%, 60%)";
@@ -18,15 +23,13 @@ export function InterfaceTabs(): JSX.Element {
     interfaceTabTwo.style.background = inactiveBg;
     interfaceTabOne.style.background = activeBg;
 
-    weatherInfo.style.display = "none";
-    interfaceSidebar.style.display = "flex";
+    props.hideElement("weather-info");
+    props.showElement("weather-request-sidebar");
 
   };
 
   const setTabTwoActive = () => {
 
-    const interfaceSidebar: HTMLElement = (document.getElementById("weather-request-sidebar") as HTMLElement);
-    const weatherInfo: HTMLElement = (document.getElementById("weather-info") as HTMLElement);
     const interfaceTabOne: HTMLElement = document.getElementById("interface-tab-1") as HTMLElement;
     const interfaceTabTwo: HTMLElement = (document.getElementById("interface-tab-2") as HTMLElement);
     const activeBg: string = "hsl(280, 70%, 60%)";
@@ -37,8 +40,8 @@ export function InterfaceTabs(): JSX.Element {
     interfaceTabOne.style.background = inactiveBg;
     interfaceTabTwo.style.background = activeBg;
 
-    interfaceSidebar.style.display = "none";
-    weatherInfo.style.display = "block";
+    props.hideElement("weather-request-sidebar");
+    props.showElement("weather-info");
 
   };
 
