@@ -22,6 +22,38 @@ function App(): JSX.Element {
 
     const appContainer: null | HTMLElement = document.getElementById("app-container");
 
+
+
+    window.addEventListener("resize", () => {
+
+      if (window.innerWidth >= 768)
+        (appContainer as HTMLElement).style.border = "25px double hsl(220, 50%, 30%)";
+      else
+        (appContainer as HTMLElement).style.border = "none";
+
+    });
+
+
+
+    return () => {
+
+      window.removeEventListener("resize", () => {
+
+        if (window.innerHeight >= 768)
+          (appContainer as HTMLElement).style.border = "25px double hsl(220, 50%, 30%)";
+        else
+          (appContainer as HTMLElement).style.border = "none";
+
+      });
+
+    };
+
+  }, []);
+
+  useEffect(() => {
+
+    const appContainer: null | HTMLElement = document.getElementById("app-container");
+
     if (appStatus) {
 
       (appContainer as HTMLElement).style.background = "hsl(220, 50%, 60%)";
