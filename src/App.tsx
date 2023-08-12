@@ -57,7 +57,7 @@ function App(): JSX.Element {
     if (appStatus) {
 
       (appContainer as HTMLElement).style.background = "hsl(220, 50%, 60%)";
-      if (window.innerHeight >= 768)
+      if (window.innerWidth >= 768)
         (appContainer as HTMLElement).style.border = "25px double hsl(220, 50%, 30%)";
       (appContainer as HTMLElement).style.justifyContent = "center";
       (appContainer as HTMLElement).style.alignItems = "center";
