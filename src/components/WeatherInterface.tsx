@@ -89,9 +89,9 @@ export function WeatherInterface(): JSX.Element {
   return (
 
     <main id="weather-interface">
+      {window.innerWidth < 768 ? <InterfaceTabs showElement={showElement} hideElement={hideElement} /> : null}
       <InterfaceSidebar />
       <WeatherInformation />
-      {window.innerWidth < 768 ? <InterfaceTabs showElement={showElement} hideElement={hideElement} /> : null}
     </main>
 
   );
