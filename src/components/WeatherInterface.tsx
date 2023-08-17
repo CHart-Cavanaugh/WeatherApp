@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { InterfaceSidebar } from "./InterfaceSidebar";
 import { WeatherInformation } from "./WeatherInformation";
 import { InterfaceTabs } from "./InterfaceTabs";
@@ -6,6 +7,8 @@ import { useEffect } from "react";
 
 
 export function WeatherInterface(): JSX.Element {
+
+  const [showTabs, setShowTabs] = useState(false);
 
   const showElement = (elementName: string) => {
 
@@ -51,14 +54,25 @@ export function WeatherInterface(): JSX.Element {
     window.addEventListener("resize", () => {
 
       if (window.innerWidth >= 768) {
+
         showElement("weather-info");
         showElement("weather-request-sidebar");
+        setShowTabs(false);
+
       } else {
+
         hideElement("weather-info");
         showElement("weather-request-sidebar");
+        setShowTabs(true);
+
       }
 
     });
+
+    if (window.innerWidth < 768)
+      setShowTabs(true);
+    else
+      setShowTabs(false);
 
 
 
@@ -70,11 +84,13 @@ export function WeatherInterface(): JSX.Element {
 
           showElement("weather-info");
           showElement("weather-request-sidebar");
+          setShowTabs(false);
 
         } else {
 
           hideElement("weather-info");
           showElement("weather-request-sidebar");
+          setShowTabs(true);
 
         }
 
@@ -89,7 +105,7 @@ export function WeatherInterface(): JSX.Element {
   return (
 
     <main id="weather-interface">
-      {window.innerWidth < 768 ? <InterfaceTabs showElement={showElement} hideElement={hideElement} /> : null}
+      {showTabs ? <InterfaceTabs showElement={showElement} hideElement={hideElement} /> : null}
       <InterfaceSidebar />
       <WeatherInformation />
     </main>
