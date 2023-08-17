@@ -1,16 +1,17 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import { InterfaceSidebar } from "./InterfaceSidebar";
 import { WeatherInformation } from "./WeatherInformation";
 import { InterfaceTabs } from "./InterfaceTabs";
-import { useEffect } from "react";
+
 
 
 
 export function WeatherInterface(): JSX.Element {
 
-  const [showTabs, setShowTabs] = useState(false);
+  const [showTabs, setShowTabs]: [boolean, React.Dispatch<React.SetStateAction<boolean>>] = useState(false);
 
-  const showElement = (elementName: string) => {
+  const showElement = (elementName: string): void => {
 
     let element: HTMLElement | null = null;
 
@@ -33,7 +34,7 @@ export function WeatherInterface(): JSX.Element {
 
   };
 
-  const hideElement = (elementName: string) => {
+  const hideElement = (elementName: string): void => {
 
     let element: HTMLElement | null = null;
 
