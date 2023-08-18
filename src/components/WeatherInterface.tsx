@@ -5,7 +5,26 @@ import { InterfaceTabs } from "./InterfaceTabs";
 
 
 
-const interfaceControls = {
+interface WeatherInterfaceControls {
+
+  general: {
+
+    showElement: (elementName: string) => void,
+    hideElement: (elementName: string) => void,
+
+  },
+  interfaceTabs: {
+
+    setTabOneActive: () => void,
+    setTabTwoActive: () => void,
+
+  },
+
+};
+
+
+
+const interfaceControls: WeatherInterfaceControls = {
 
   general: {
 
