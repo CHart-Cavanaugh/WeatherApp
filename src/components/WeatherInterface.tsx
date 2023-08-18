@@ -141,10 +141,19 @@ export function WeatherInterface(): JSX.Element {
 
 
 
-    if (window.innerWidth < 768)
-      interfaceTabs.style.display = "flex";
-    else
+    if (window.innerWidth >= 768) {
+
+      interfaceControls.general.showElement("weather-info");
+      interfaceControls.general.showElement("weather-request-sidebar");
       interfaceTabs.style.display = "none";
+
+    } else {
+
+      interfaceControls.general.hideElement("weather-info");
+      interfaceControls.general.showElement("weather-request-sidebar");
+      interfaceTabs.style.display = "flex";
+
+    }
 
 
 
