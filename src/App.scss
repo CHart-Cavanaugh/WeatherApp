@@ -50,6 +50,8 @@ body {
   display: flex;
   flex-direction: column;
 
+
+
   #weather-request-sidebar {
 
     height: 100%;
@@ -62,20 +64,29 @@ body {
     #weather-request-form {
 
       background: hsl(40, 50%, 40%);
-      height: 30%;
+      height: 12%;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
 
-      label {
 
-        text-align: center;
+
+      div {
+
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+
 
         input {
 
-          display: block;
-          margin: .5rem 0;
+          padding: .5rem;
+          width: 70%;
+          height: 100%;
+          font-size: 1.2rem;
 
         }
 
@@ -85,11 +96,16 @@ body {
 
         }
 
-      }
 
-      button {
 
-        margin-top: .5rem;
+        button {
+
+          padding: .25rem;
+          width: 25%;
+          height: 100%;
+          font-size: 1.2rem;
+
+        }
 
       }
 
@@ -100,7 +116,7 @@ body {
     #weather-request-history {
 
       background: hsl(140, 50%, 40%);
-      height: 70%;
+      height: calc(100% - 12% + 1.2rem);
 
     }
 
@@ -180,6 +196,7 @@ body {
     flex-direction: row;
 
 
+
     #weather-request-sidebar {
 
       height: 100%;
@@ -187,15 +204,46 @@ body {
       display: flex;
 
 
+
       #weather-request-form {
 
         background: hsl(40, 50%, 40%);
+
+
+
+        div {
+
+          transform: scale(1);
+          display: flex;
+          width: 100%;
+          justify-content: center;
+
+
+
+          input {
+
+            padding: .25rem;
+            width: 70%;
+            font-size: 1rem;
+
+          }
+
+          button {
+
+            padding: .25rem;
+            width: 20%;
+            font-size: 1rem;
+
+          }
+
+        }
 
       }
 
       #weather-request-history {
 
         background: hsl(140, 50%, 40%);
+        height: calc(100% - 12% + 1rem);
 
       }
 
