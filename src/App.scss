@@ -163,6 +163,131 @@ body {
 
       height: 30%;
       background: black;
+      padding: 1em;
+      padding-top: 0;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+
+
+      p,
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+
+        color: white;
+        margin: 0;
+        display: inline-block;
+        padding: .5rem;
+
+      }
+
+
+
+      section {
+
+        width: 100%;
+        background: black;
+
+      }
+
+      section:first-of-type {
+
+        height: 3rem;
+
+      }
+
+      section:last-of-type {
+
+        display: flex;
+        justify-content: space-between;
+
+      }
+
+
+
+      #location-label {
+
+        width: 100%;
+
+      }
+
+
+
+      #temp-info-container {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 8rem;
+        background: grey;
+
+
+
+        #temp-unit-labels {
+
+          display: flex;
+          width: 100%;
+
+
+
+          .temp-unit {
+
+            padding: .25rem;
+            flex-basis: 50%;
+            background: blue;
+            text-align: center;
+            border: 1px solid black;
+
+          }
+
+        }
+
+        h1 {
+
+          font-size: 1.5rem;
+
+        }
+
+      }
+
+      #wind-info-container {
+
+        display: inline-flex;
+        flex-direction: column;
+        margin: 0 1rem;
+
+
+
+        .weather-info-label {
+
+          padding: 0;
+
+        }
+
+      }
+
+      #displaced-labels {
+
+        // display: inline-flex;
+        display: none;
+        flex-direction: column;
+        width: 10rem;
+
+
+
+        .weather-info-label {
+
+          padding: 0;
+
+        }
+
+      }
 
     }
 
@@ -261,6 +386,24 @@ body {
 
         height: 35%;
         background: black;
+
+
+
+        #temp-info-container {
+
+          h1 {
+
+            font-size: 2.5rem;
+
+          }
+
+        }
+
+        #displaced-labels {
+
+          display: inline-flex;
+
+        }
 
       }
 
