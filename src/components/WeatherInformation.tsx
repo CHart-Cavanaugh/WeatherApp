@@ -11,6 +11,8 @@
       2) Current Temperature (C/F)
       3) High / Low Temperature (C/F)
       4) Wind Speed
+      5) UV Index
+      6) Humidity
       n) [END]
 
     n) [END]
