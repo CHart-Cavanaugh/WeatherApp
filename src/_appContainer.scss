@@ -1,0 +1,29 @@
+#app-container,
+#app-container * {
+
+  box-sizing: border-box;
+
+}
+
+#app-container {
+
+  height: 100dvh;
+  width: 100dvw;
+  background: hsl(220, 50%, 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+@media (min-width: 768px) {
+
+  #app-container {
+
+    border: 25px double hsl(220, 50%, 30%);
+
+  }
+
+}
