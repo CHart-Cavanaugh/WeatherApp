@@ -75,7 +75,6 @@ export function WeatherInformation(): JSX.Element {
             </h4>
             <h4 id="wind-speed-label"
               className="weather-info-label"
-
             >
               Wind Speed: <span>0</span> mph
             </h4>
