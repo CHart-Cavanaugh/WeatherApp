@@ -48,24 +48,19 @@ export function WeatherInformation(): JSX.Element {
         </section>
         <section>
           <div id="temp-info-container">
-            <h4
+            <h4 id="current-temp"
               className="weather-info-label"
-              id="current-temp"
             >
               Temperature:
             </h4>
-            <div
-              id="temp-unit-labels"
-            >
-              <p
+            <div id="temp-unit-labels">
+              <p id="temp-unit-celcius"
                 className="temp-unit"
-                id="temp-unit-celcius"
               >
                 C
               </p>
-              <p
+              <p id="temp-unit-celcius"
                 className="temp-unit"
-                id="temp-unit-celcius"
               >
                 F
               </p>
@@ -86,27 +81,23 @@ export function WeatherInformation(): JSX.Element {
             </h4>
           </div>
           <div id="displaced-labels">
-            <h4
+            <h4 id="current-humidity"
               className="weather-info-label"
-              id="current-humidity"
             >
               Humidity: <span>0</span> %
             </h4>
-            <h4
+            <h4 id="uv-index-label"
               className="weather-info-label"
-              id="uv-index-label"
             >
               UV Index: <span>0</span>
             </h4>
-            <h4
+            <h4 id="pressure-label"
               className="weather-info-label"
-              id="pressure-label"
             >
               Pressure: <span>0.00</span> in
             </h4>
-            <h4
+            <h4 id="visibility-label"
               className="weather-info-label"
-              id="visibility-label"
             >
               Visibility: <span>0.0</span> mi
             </h4>
