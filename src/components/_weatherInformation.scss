@@ -12,7 +12,6 @@
     background: black;
     padding: 1em;
     padding-top: 0;
-
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -58,7 +57,15 @@
 
 
 
-    #location-label {
+    .weather-info-label {
+
+      padding: 0;
+
+    }
+
+
+
+    #location-val {
 
       width: 100%;
 
@@ -66,7 +73,7 @@
 
 
 
-    #temp-info-container {
+    #temp-info {
 
       display: flex;
       flex-direction: column;
@@ -95,7 +102,7 @@
 
       }
 
-      h1 {
+      #current-temp-val {
 
         font-size: 1.5rem;
 
@@ -103,28 +110,11 @@
 
     }
 
-    #wind-info-container {
+    #wind-info {
 
       display: inline-flex;
       flex-direction: column;
       margin: 0 1rem;
-
-
-
-      .weather-info-label {
-
-        padding: 0;
-
-      }
-
-    }
-
-    #displaced-labels {
-
-      // display: inline-flex;
-      display: none;
-      flex-direction: column;
-      width: 10rem;
 
 
 
@@ -166,19 +156,13 @@
 
 
 
-      #temp-info-container {
+      #temp-info {
 
-        h1 {
+        #current-temp-val {
 
           font-size: 2.5rem;
 
         }
-
-      }
-
-      #displaced-labels {
-
-        display: inline-flex;
 
       }
 

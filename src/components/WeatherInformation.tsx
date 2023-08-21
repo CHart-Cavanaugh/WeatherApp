@@ -39,16 +39,16 @@ export function WeatherInformation(): JSX.Element {
 
     <section id="weather-info">
       <header>
-        <section>
-          <h3 id="location-label"
+        <section id="location-info">
+          <h3 id="location-val"
             className="weather-info-label"
           >
             someLocation
           </h3>
         </section>
-        <section>
-          <div id="temp-info-container">
-            <h4 id="current-temp"
+        <section id="main-info">
+          <div id="temp-info">
+            <h4 id="current-temp-label"
               className="weather-info-label"
             >
               Temperature:
@@ -65,41 +65,71 @@ export function WeatherInformation(): JSX.Element {
                 F
               </p>
             </div>
-            <h1>0</h1>
+            <p id="current-temp-val">
+              0
+            </p>
           </div>
-          <div id="wind-info-container">
-            <h4 id="wind-dir-label"
-              className="weather-info-label"
-            >
-              Wind Direction: <span>"E"</span>
-            </h4>
-            <h4 id="wind-speed-label"
-              className="weather-info-label"
-            >
-              Wind Speed: <span>0</span> mph
-            </h4>
+          <div id="wind-info">
+            <div id="wind-dir-info">
+              <h4 id="wind-dir-label"
+                className="weather-info-label"
+              >
+                Wind Direction:
+              </h4>
+              <p id="wind-dir-val">
+                "E"
+              </p>
+            </div>
+            <div id="wind-speed-info">
+              <h4 id="wind-speed-label"
+                className="weather-info-label"
+              >
+                Wind Speed:
+              </h4>
+              <p id="wind-speed-val">
+                <span>0</span> <span>mph</span>
+              </p>
+            </div>
           </div>
-          <div id="displaced-labels">
-            <h4 id="current-humidity"
+          <div id="humidity-info">
+            <h4 id="humidity-label"
               className="weather-info-label"
             >
-              Humidity: <span>0</span> %
+              Humidity:
             </h4>
+            <p id="humidity-val">
+              <span>0</span> <span>%</span>
+            </p>
+          </div>
+          <div id="uv-index-info">
             <h4 id="uv-index-label"
               className="weather-info-label"
             >
-              UV Index: <span>0</span>
+              UV Index:
             </h4>
+            <p id="uv-index-val">
+              0
+            </p>
+          </div>
+          <div id="pressure-info">
             <h4 id="pressure-label"
               className="weather-info-label"
             >
-              Pressure: <span>0.00</span> in
+              Pressure:
             </h4>
+            <p id="pressure-val">
+              <span>0.00</span> <span>in</span>
+            </p>
+          </div>
+          <div id="visibility-info">
             <h4 id="visibility-label"
               className="weather-info-label"
             >
-              Visibility: <span>0.0</span> mi
+              Visibility:
             </h4>
+            <p id="visibility-val">
+              <span>0.0</span> <span>mi</span>
+            </p>
           </div>
         </section>
       </header>
