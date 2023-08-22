@@ -18,23 +18,6 @@
 
 
 
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-
-      color: white;
-      margin: 0;
-      display: inline-block;
-      padding: .5rem;
-
-    }
-
-
-
     section {
 
       width: 100%;
@@ -55,83 +38,84 @@
 
     }
 
-
-
-    .weather-info-label {
-
-      padding: 0;
-
-    }
-
-
-
-    #location-val {
-
-      width: 100%;
-
-    }
-
-
-
-    #temp-info {
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 8rem;
-      background: grey;
-
-
-
-      #temp-unit-labels {
-
-        display: flex;
-        width: 100%;
-
-
-
-        .temp-unit {
-
-          padding: .25rem;
-          flex-basis: 50%;
-          background: blue;
-          text-align: center;
-          border: 1px solid black;
-
-        }
-
-      }
-
-      #current-temp-val {
-
-        font-size: 1.5rem;
-
-      }
-
-    }
-
-    #wind-info {
-
-      display: inline-flex;
-      flex-direction: column;
-      margin: 0 1rem;
-
-
-
-      .weather-info-label {
-
-        padding: 0;
-
-      }
-
-    }
-
   }
 
   section {
 
     height: 65%;
     background: hsl(340, 50%, 40%);
+
+  }
+
+}
+
+
+
+.info-label,
+.info-val,
+.temp-unit {
+
+  color: white;
+  margin: 0;
+  display: block;
+
+}
+
+#location-info {
+
+  #location-val {
+
+    width: 100%;
+    font-size: 2rem;
+
+  }
+
+}
+
+#main-info {
+
+  #temp-info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 8rem;
+    background: grey;
+
+
+
+    #temp-unit-labels {
+
+      display: flex;
+      width: 100%;
+
+
+
+      .temp-unit {
+
+        padding: .25rem;
+        flex-basis: 50%;
+        background: blue;
+        text-align: center;
+        border: 1px solid black;
+
+      }
+
+    }
+
+    #current-temp-val {
+
+      font-size: 1.5rem;
+
+    }
+
+  }
+
+  #wind-info {
+
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0 1rem;
 
   }
 
@@ -154,24 +138,28 @@
       height: 35%;
       background: black;
 
-
-
-      #temp-info {
-
-        #current-temp-val {
-
-          font-size: 2.5rem;
-
-        }
-
-      }
-
     }
 
     section {
 
       height: 65%;
       background: hsl(340, 50%, 40%);
+
+    }
+
+  }
+
+
+
+  #main-info {
+
+    #temp-info {
+
+      #current-temp-val {
+
+        font-size: 2.5rem;
+
+      }
 
     }
 
