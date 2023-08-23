@@ -84,24 +84,25 @@
 
 
 
+
     #temp-unit-labels {
 
       display: flex;
       width: 100%;
 
+    }
 
+    .temp-unit {
 
-      .temp-unit {
-
-        padding: .25rem;
-        flex-basis: 50%;
-        background: blue;
-        text-align: center;
-        border: 1px solid black;
-
-      }
+      padding: .25rem;
+      flex-basis: 50%;
+      background: blue;
+      text-align: center;
+      border: 1px solid black;
 
     }
+
+
 
     #current-temp-val {
 
