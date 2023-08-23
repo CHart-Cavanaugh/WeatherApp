@@ -74,6 +74,10 @@
 
 #main-info {
 
+  overflow-x: scroll;
+  overflow-y: hidden;
+
+
   #temp-info {
 
     display: flex;
@@ -81,7 +85,16 @@
     align-items: center;
     width: 8rem;
     background: grey;
+    justify-content: space-around;
 
+
+    #current-temp-label {
+
+      text-align: center;
+      width: 100%;
+      padding: 0 .5rem;
+
+    }
 
 
 
@@ -99,6 +112,13 @@
       background: blue;
       text-align: center;
       border: 1px solid black;
+      border-left: none;
+
+    }
+
+    #temp-unit-fahrenheit {
+
+      border-right: none;
 
     }
 
@@ -106,7 +126,9 @@
 
     #current-temp-val {
 
-      font-size: 1.5rem;
+      width: 100%;
+      text-align: center;
+      font-size: 3rem;
 
     }
 
@@ -150,19 +172,9 @@
 
   }
 
-
-
   #main-info {
 
-    #temp-info {
-
-      #current-temp-val {
-
-        font-size: 2.5rem;
-
-      }
-
-    }
+    overflow-x: hidden;
 
   }
 

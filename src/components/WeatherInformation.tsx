@@ -59,7 +59,7 @@ export function WeatherInformation(): JSX.Element {
               >
                 C
               </p>
-              <p id="temp-unit-celcius"
+              <p id="temp-unit-fahrenheit"
                 className="temp-unit"
               >
                 F
