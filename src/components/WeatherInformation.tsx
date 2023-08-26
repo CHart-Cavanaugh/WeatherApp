@@ -47,103 +47,111 @@ export function WeatherInformation(): JSX.Element {
           </h3>
         </section>
         <section id="main-info">
-          <div id="temp-info">
-            <h4 id="current-temp-label"
-              className="info-label"
-            >
-              Temperature:
-            </h4>
-            <div id="temp-unit-labels">
-              <p id="temp-unit-celcius"
-                className="temp-unit"
-              >
-                C
-              </p>
-              <p id="temp-unit-fahrenheit"
-                className="temp-unit"
-              >
-                F
-              </p>
-            </div>
-            <p id="current-temp-val"
-              className="info-val"
-            >
-              0
-            </p>
-          </div>
-          <div id="wind-info">
-            <div id="wind-dir-info">
-              <h4 id="wind-dir-label"
+          <div id="main-col-left"
+            className="main-column"
+          >
+            <div id="temp-info">
+              <h4 id="current-temp-label"
                 className="info-label"
               >
-                Wind Direction:
+                Temperature:
               </h4>
-              <p id="wind-dir-val"
+              <div id="temp-unit-labels">
+                <p id="temp-unit-celcius"
+                  className="temp-unit"
+                >
+                  C
+                </p>
+                <p id="temp-unit-fahrenheit"
+                  className="temp-unit"
+                >
+                  F
+                </p>
+              </div>
+              <p id="current-temp-val"
                 className="info-val"
               >
-                "E"
+                0
               </p>
             </div>
-            <div id="wind-speed-info">
-              <h4 id="wind-speed-label"
+          </div>
+          <div id="main-col-right"
+            className="main-column"
+          >
+            <div id="wind-info">
+              <div id="wind-dir-info">
+                <h4 id="wind-dir-label"
+                  className="info-label"
+                >
+                  Wind Direction:
+                </h4>
+                <p id="wind-dir-val"
+                  className="info-val"
+                >
+                  "E"
+                </p>
+              </div>
+              <div id="wind-speed-info">
+                <h4 id="wind-speed-label"
+                  className="info-label"
+                >
+                  Wind Speed:
+                </h4>
+                <p id="wind-speed-val"
+                  className="info-val"
+                >
+                  <span>0</span> <span>mph</span>
+                </p>
+              </div>
+            </div>
+            <div id="humidity-info">
+              <h4 id="humidity-label"
                 className="info-label"
               >
-                Wind Speed:
+                Humidity:
               </h4>
-              <p id="wind-speed-val"
+              <p id="humidity-val"
                 className="info-val"
               >
-                <span>0</span> <span>mph</span>
+                <span>0</span> <span>%</span>
               </p>
             </div>
-          </div>
-          <div id="humidity-info">
-            <h4 id="humidity-label"
-              className="info-label"
-            >
-              Humidity:
-            </h4>
-            <p id="humidity-val"
-              className="info-val"
-            >
-              <span>0</span> <span>%</span>
-            </p>
-          </div>
-          <div id="uv-index-info">
-            <h4 id="uv-index-label"
-              className="info-label"
-            >
-              UV Index:
-            </h4>
-            <p id="uv-index-val"
-              className="info-val"
-            >
-              0
-            </p>
-          </div>
-          <div id="pressure-info">
-            <h4 id="pressure-label"
-              className="info-label"
-            >
-              Pressure:
-            </h4>
-            <p id="pressure-val"
-              className="info-val"
-            >
-              <span>0.00</span> <span>in</span>
-            </p>
-          </div>
-          <div id="visibility-info">
-            <h4 id="visibility-label"
-              className="info-label"
-            >
-              Visibility:
-            </h4>
-            <p id="visibility-val"
-              className="info-val"
-            >
-              <span>0.0</span> <span>mi</span>
-            </p>
+            <div id="uv-index-info">
+              <h4 id="uv-index-label"
+                className="info-label"
+              >
+                UV Index:
+              </h4>
+              <p id="uv-index-val"
+                className="info-val"
+              >
+                0
+              </p>
+            </div>
+            <div id="pressure-info">
+              <h4 id="pressure-label"
+                className="info-label"
+              >
+                Pressure:
+              </h4>
+              <p id="pressure-val"
+                className="info-val"
+              >
+                <span>0.00</span> <span>in</span>
+              </p>
+            </div>
+            <div id="visibility-info">
+              <h4 id="visibility-label"
+                className="info-label"
+              >
+                Visibility:
+              </h4>
+              <p id="visibility-val"
+                className="info-val"
+              >
+                <span>0.0</span> <span>mi</span>
+              </p>
+            </div>
           </div>
         </section>
       </header>
