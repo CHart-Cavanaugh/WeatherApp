@@ -79,30 +79,16 @@ export function WeatherInformation(): JSX.Element {
             className="main-column"
           >
             <div id="wind-info">
-              <div id="wind-dir-info">
-                <h4 id="wind-dir-label"
-                  className="info-label"
-                >
-                  Wind Direction:
-                </h4>
-                <p id="wind-dir-val"
-                  className="info-val"
-                >
-                  "E"
-                </p>
-              </div>
-              <div id="wind-speed-info">
-                <h4 id="wind-speed-label"
-                  className="info-label"
-                >
-                  Wind Speed:
-                </h4>
-                <p id="wind-speed-val"
-                  className="info-val"
-                >
-                  <span>0</span> <span>mph</span>
-                </p>
-              </div>
+              <h4 id="wind-label"
+                className="info-label"
+              >
+                Wind:
+              </h4>
+              <p id="wind-val"
+                className="info-val"
+              >
+                <span>"E"</span> - <span>0</span> <span>mph</span>
+              </p>
             </div>
             <div id="humidity-info">
               <h4 id="humidity-label"
