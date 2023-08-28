@@ -20,8 +20,7 @@
 
     section {
 
-      width: 100%;
-      background: black;
+      background: transparent;
 
     }
 
@@ -38,16 +37,6 @@
 
 
 
-.info-label,
-.info-val,
-.temp-unit {
-
-  color: white;
-  margin: 0;
-  display: block;
-
-}
-
 #location-info {
 
   flex-basis: 2rem;
@@ -56,7 +45,6 @@
 
   #location-val {
 
-    width: 100%;
     font-size: 2rem;
 
   }
@@ -69,9 +57,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   overflow-y: scroll;
-  // row-gap: 1rem;
   flex-basis: calc(100% - 2rem);
-  // column-gap: .5rem;
 
 
 
@@ -83,7 +69,6 @@
 
   #main-col-left {
 
-    // flex-basis: 10rem;
     flex-basis: 40%;
     height: 100%;
 
@@ -104,6 +89,13 @@
     div {
 
       background: grey; //Testing Only. Remove Later.
+      //Developer Note:
+      /*
+
+        - Use for setting up grid on "#main-col-right" element
+          in viewports with a width >= 768 pixels.
+
+      */
       padding: .2rem;
 
     }
@@ -117,10 +109,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    // width: 10rem;
     background: grey;
     justify-content: space-around;
     height: 100%;
+
 
 
     #current-temp-label {
@@ -179,6 +171,17 @@
 }
 
 
+
+.info-label,
+.info-val,
+.temp-unit {
+
+  color: white;
+  margin: 0;
+  display: block;
+
+}
+
 .info-label {
 
   margin: 0;
@@ -194,24 +197,6 @@
     height: 100%;
     flex-basis: 70%;
     display: block;
-
-
-
-    header {
-
-      height: 35%;
-      background: black;
-
-    }
-
-
-
-    section {
-
-      height: 65%;
-      background: hsl(340, 50%, 40%);
-
-    }
 
   }
 
@@ -234,7 +219,6 @@
     #main-col-right {
 
       flex-basis: 45%;
-      // justify-content: flex-start;
       padding: 0 1.5rem;
       row-gap: 0;
 
