@@ -4,9 +4,9 @@
   width: 100%;
   height: 65%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 10%;
+  gap: 0;
 
 
 
@@ -21,8 +21,13 @@
 
 
 
-// @media (min-width: 768px) {
+@media (min-width: 768px) {
 
+  #hourly-forecast-container {
 
+    justify-content: center;
+    gap: 10%;
 
-// }
+  }
+
+}
