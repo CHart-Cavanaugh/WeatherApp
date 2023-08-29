@@ -1,0 +1,28 @@
+#hourly-forecast-container {
+
+  background: hsl(340, 50%, 40%);
+  width: 100%;
+  height: 65%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+
+
+
+  div {
+
+    background: grey;
+    padding: 1rem;
+
+  }
+
+}
+
+
+
+// @media (min-width: 768px) {
+
+
+
+// }
