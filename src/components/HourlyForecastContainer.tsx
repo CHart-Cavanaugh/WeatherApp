@@ -50,7 +50,11 @@ export function HourlyForecastContainer(): JSX.Element {
 
   return (
     <section id="hourly-forecast-container">
+      {forecasts.map((val, index) => {
 
+        return (<div key={`hour-forecast-${index + 1}`}>{val}</div>)
+
+      })}
     </section>
   );
 
