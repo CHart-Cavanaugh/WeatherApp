@@ -41,7 +41,7 @@ export function WeatherInformation(): JSX.Element {
   return (
 
     <section id="weather-info">
-      <header>
+      <header id="weather-header">
         <section id="location-info">
           <h3 id="location-val"
             className="info-label"
@@ -144,7 +144,9 @@ export function WeatherInformation(): JSX.Element {
           </div>
         </section>
       </header>
-      <HourlyForecastContainer />
+      <section id="weather-hourly-forecast">
+        <HourlyForecastContainer />
+      </section>
     </section>
 
   );
