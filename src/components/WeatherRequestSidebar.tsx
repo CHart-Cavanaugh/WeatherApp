@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 
 
 
-export function InterfaceSidebar(): JSX.Element {
+export function WeatherRequestSidebar(): JSX.Element {
 
   let responseJSON: null | JSON = null;
   const handleSubmit = (e: Event) => {

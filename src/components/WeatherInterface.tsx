@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { InterfaceSidebar } from "./InterfaceSidebar";
+import { WeatherRequestSidebar } from "./WeatherRequestSidebar";
 import { WeatherInformation } from "./WeatherInformation";
 import { InterfaceTabs } from "./InterfaceTabs";
 
@@ -196,7 +196,7 @@ export function WeatherInterface(): JSX.Element {
         setTabOneActive={interfaceControls.interfaceTabs.setTabOneActive}
         setTabTwoActive={interfaceControls.interfaceTabs.setTabTwoActive}
       />
-      <InterfaceSidebar />
+      <WeatherRequestSidebar />
       <WeatherInformation />
     </main>
 
