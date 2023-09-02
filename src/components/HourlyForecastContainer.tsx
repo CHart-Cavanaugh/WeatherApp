@@ -55,15 +55,15 @@ export function HourlyForecastContainer(): JSX.Element {
         return (
 
           <div key={`hour-forecast-${index}`}>
-            <section className="hourly-info hourly-temperature">
+            <section key="hourly-temperature" className="hourly-info hourly-temperature">
               <h4>Temperature:</h4>
               <p>0</p>
             </section>
-            <section className="hourly-info hourly-humidity">
+            <section key="hourly-humidity" className="hourly-info hourly-humidity">
               <h4>Humidity:</h4>
               <p>0 %</p>
             </section>
-            <section className="hourly-info hourly-wind">
+            <section key="hourly-wind" className="hourly-info hourly-wind">
               <h4>Wind:</h4>
               <p>
                 <span>"N"</span> - <span>0</span> mph
