@@ -1,4 +1,4 @@
-import { HourlyForecastContainer } from './HourlyForecastContainer';
+import { HourlyForecast } from './HourlyForecast';
 
 
 //Weather Information Notes
@@ -145,7 +145,7 @@ export function WeatherInformation(): JSX.Element {
         </section>
       </header>
       <section id="weather-hourly-forecast">
-        <HourlyForecastContainer />
+        <HourlyForecast />
       </section>
     </section>
 

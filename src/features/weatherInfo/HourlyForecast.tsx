@@ -27,7 +27,7 @@ const TEMP_FORECAST_REFRESH: ((val: number) => number) = (
 
 
 
-export function HourlyForecastContainer(): JSX.Element {
+export function HourlyForecast(): JSX.Element {
 
   const [forecasts, setForecasts]: [HourForecasts, Function] = useState(TEMP_FORECASTS);
 
