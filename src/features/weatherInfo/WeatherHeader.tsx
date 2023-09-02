@@ -1,1 +1,9 @@
-export { };
+function WeatherHeader(): JSX.Element {
+
+  return (
+
+    <></>
+
+  );
+
+}
