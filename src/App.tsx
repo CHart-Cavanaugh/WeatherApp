@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
-import { WeatherInterface } from './components/WeatherInterface';
+import { WeatherInterface } from './features/appInterface/WeatherInterface';
 
 
 

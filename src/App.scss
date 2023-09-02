@@ -2,15 +2,15 @@
 
 @import "./_appContainer";
 
-@import "./components/_weatherInterface";
+@import "./features/appInterface/_weatherInterface";
 
-@import "./components/_weatherInformation";
-@import "./components/_weatherHeader";
-@import "./components/_hourlyForecast";
+@import "./features/weatherInfo/_weatherInformation";
+@import "./features/weatherInfo/_weatherHeader";
+@import "./features/weatherInfo/_hourlyForecast";
 
-@import "./components/_interfaceTabs";
+@import "./features/interfaceTabs/_interfaceTabs";
 
-@import "./components/_weatherRequestSidebar";
+@import "./features/weatherRequest/_weatherRequestSidebar";
 
 
 

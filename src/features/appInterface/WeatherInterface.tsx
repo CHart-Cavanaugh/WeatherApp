@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { WeatherRequestSidebar } from "./WeatherRequestSidebar";
-import { WeatherInformation } from "./WeatherInformation";
-import { InterfaceTabs } from "./InterfaceTabs";
+import { WeatherRequestSidebar } from "./../weatherRequest/WeatherRequestSidebar";
+import { WeatherInformation } from "./../weatherInfo/WeatherInformation";
+import { InterfaceTabs } from "./../interfaceTabs/InterfaceTabs";
 
 
 
