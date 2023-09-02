@@ -1,3 +1,4 @@
+import { WeatherHeader } from './WeatherHeader';
 import { HourlyForecast } from './HourlyForecast';
 
 
@@ -41,109 +42,7 @@ export function WeatherInformation(): JSX.Element {
   return (
 
     <section id="weather-info">
-      <header id="weather-header">
-        <section id="location-info">
-          <h3 id="location-val"
-            className="info-label"
-          >
-            someLocation
-          </h3>
-        </section>
-        <section id="main-info">
-          <div id="main-col-left"
-            className="main-column"
-          >
-            <div id="temp-info">
-              <h4 id="current-temp-label"
-                className="info-label"
-              >
-                Temperature:
-              </h4>
-              <div id="temp-unit-labels">
-                <p id="temp-unit-celcius"
-                  className="temp-unit"
-                >
-                  C
-                </p>
-                <p id="temp-unit-fahrenheit"
-                  className="temp-unit"
-                >
-                  F
-                </p>
-              </div>
-              <p id="current-temp-val"
-                className="info-val"
-              >
-                0
-              </p>
-            </div>
-          </div>
-          <div id="main-col-right"
-            className="main-column"
-          >
-            <div id="wind-info">
-              <h4 id="wind-label"
-                className="info-label"
-              >
-                Wind:
-              </h4>
-              <p id="wind-val"
-                className="info-val"
-              >
-                <span>"E"</span> - <span>0</span> <span>mph</span>
-              </p>
-            </div>
-            <div id="humidity-info">
-              <h4 id="humidity-label"
-                className="info-label"
-              >
-                Humidity:
-              </h4>
-              <p id="humidity-val"
-                className="info-val"
-              >
-                <span>0</span> <span>%</span>
-              </p>
-            </div>
-            <div id="uv-index-info">
-              <h4 id="uv-index-label"
-                className="info-label"
-              >
-                UV Index:
-              </h4>
-              <p id="uv-index-val"
-                className="info-val"
-              >
-                0
-              </p>
-            </div>
-            <div id="pressure-info">
-              <h4 id="pressure-label"
-                className="info-label"
-              >
-                Pressure:
-              </h4>
-              <p id="pressure-val"
-                className="info-val"
-              >
-                <span>0.00</span> <span>in</span>
-              </p>
-            </div>
-            <div id="visibility-info">
-              <h4 id="visibility-label"
-                className="info-label"
-              >
-                Visibility:
-              </h4>
-              <p id="visibility-val"
-                className="info-val"
-              >
-                <span>0.0</span> <span>mi</span>
-              </p>
-            </div>
-          </div>
-        </section>
-      </header>
+      <WeatherHeader />
       <HourlyForecast />
     </section>
 
