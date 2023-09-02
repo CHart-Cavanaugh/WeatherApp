@@ -1,1 +1,7 @@
-export { };
+export function WeatherRequestHistory(): JSX.Element {
+
+  return (
+    <></>
+  );
+
+}
