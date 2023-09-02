@@ -144,9 +144,7 @@ export function WeatherInformation(): JSX.Element {
           </div>
         </section>
       </header>
-      <section id="weather-hourly-forecast">
-        <HourlyForecast />
-      </section>
+      <HourlyForecast />
     </section>
 
   );
