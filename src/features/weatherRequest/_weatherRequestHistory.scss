@@ -1,7 +1,31 @@
 #weather-request-history {
 
-  background: hsl(140, 50%, 40%);
+  background: hsl(317, 44%, 27%);
   height: calc(100% - 12% + 1.2rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .3rem;
+
+
+
+  ul {
+
+    background: white;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+
+      padding: 1rem;
+      background: hsl(240, 30%, 75%);
+      font-weight: bold;
+
+    }
+
+  }
 
 }
 
@@ -11,7 +35,6 @@
 
   #weather-request-history {
 
-    background: hsl(140, 50%, 40%);
     height: calc(100% - 12% + 1rem);
 
   }
