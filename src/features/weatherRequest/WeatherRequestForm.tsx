@@ -6,10 +6,13 @@ import { addResponse } from '../../app/slices/apiResponsesSlice';
 
 export function WeatherRequestForm(): JSX.Element {
 
-  let responseJSON: null | JSON = null;
+  let apiResponses = useSelector((state: { apiResponses: [] }) => state.apiResponses);
+  let dispatch = useDispatch();
   const handleSubmit = (e: Event) => {
 
     const weatherReqInput: HTMLElement | null = document.getElementById("weather-request-input");
+
+
 
     e.preventDefault();
 
@@ -17,8 +20,7 @@ export function WeatherRequestForm(): JSX.Element {
       .then((response) => response.json())
       .then((json) => {
 
-        console.log(json);
-        responseJSON = json;
+        dispatch(addResponse(json));
 
       });
 
@@ -43,6 +45,13 @@ export function WeatherRequestForm(): JSX.Element {
     }
 
   }, []);
+
+  useEffect(() => {
+
+    console.clear();
+    console.log(apiResponses);
+
+  }, [apiResponses]);
 
 
 
