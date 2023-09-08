@@ -1,7 +1,7 @@
 #weather-request-history {
 
   background: hsl(317, 44%, 27%);
-  height: calc(100% - 12% + 1.2rem);
+  height: calc(100% - 12%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,6 +16,9 @@
     height: 100%;
     padding: 0;
     list-style-type: none;
+    overflow-y: scroll;
+
+
 
     li {
 
@@ -31,12 +34,4 @@
 
 
 
-@media (min-width: 768px) {
-
-  #weather-request-history {
-
-    height: calc(100% - 12% + 1rem);
-
-  }
-
-}
+// @media (min-width: 768px) {}
