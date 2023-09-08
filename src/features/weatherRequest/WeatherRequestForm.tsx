@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+
 import { addResponse } from '../../app/slices/apiResponsesSlice';
+import { addSubmission } from '../../app/slices/testSubmissionsSlice';
 
 
 
 export function WeatherRequestForm(): JSX.Element {
 
   let apiResponses = useSelector((state: { apiResponses: [] }) => state.apiResponses);
+  let testSubmissions = useSelector((state: { testSubmissions: string[] }) => state.testSubmissions)
   let dispatch = useDispatch();
   const handleSubmit = (e: Event) => {
 
@@ -16,13 +19,21 @@ export function WeatherRequestForm(): JSX.Element {
 
     e.preventDefault();
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=d790a10e5fe74e8db6260020231908&q=${(weatherReqInput as HTMLInputElement).value}&days=2&aqi=no&alerts=no`)
-      .then((response) => response.json())
-      .then((json) => {
+    dispatch(addSubmission((weatherReqInput as HTMLInputElement).value));
 
-        dispatch(addResponse(json));
 
-      });
+
+    /* 1. API Response Fetch
+  
+      fetch(`http://api.weatherapi.com/v1/forecast.json?key=d790a10e5fe74e8db6260020231908&q=${(weatherReqInput as HTMLInputElement).value}&days=2&aqi=no&alerts=no`)
+        .then((response) => response.json())
+        .then((json) => {
+  
+          dispatch(addResponse(json));
+  
+        });
+  
+    */
 
   };
 
@@ -49,9 +60,18 @@ export function WeatherRequestForm(): JSX.Element {
   useEffect(() => {
 
     console.clear();
-    console.log(apiResponses);
+    console.log(testSubmissions);
 
-  }, [apiResponses]);
+  }, [testSubmissions]);
+
+
+
+  // useEffect(() => {
+
+  //   console.clear();
+  //   console.log(apiResponses);
+
+  // }, [apiResponses]);
 
 
 
