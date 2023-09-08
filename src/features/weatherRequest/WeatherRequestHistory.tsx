@@ -5,13 +5,31 @@ export function WeatherRequestHistory(): JSX.Element {
 
   const apiResponses: any[] = useSelector((state: { apiResponses: [] }) => state.apiResponses);
   const testSubmissions: string[] = useSelector((state: { testSubmissions: string[] }) => state.testSubmissions);
+
+  function handleClick(e: any): void {
+
+    const currSelection: any = document.getElementsByClassName("selected")[0];
+    const newSelection: any = e.target;
+
+
+    newSelection.className = "selected";
+    currSelection.className = "";
+
+  }
+
   function getListItems(): JSX.Element[] {
 
     return testSubmissions.map((value, index) => {
 
       return (
 
-        <li key={"request-" + (index + 1)}>
+        <li
+          key={"request-" + (index + 1)}
+          onClick={(e) => {
+            handleClick(e);
+          }}
+          className={index === 0 ? "selected" : ""}
+        >
           {(index + 1) + ") " + testSubmissions[index]}
         </li>
 
