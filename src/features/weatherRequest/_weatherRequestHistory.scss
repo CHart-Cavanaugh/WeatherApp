@@ -23,8 +23,21 @@
     li {
 
       padding: 1rem;
-      background: hsl(240, 30%, 75%);
+      // background: hsl(240, 30%, 75%);
       font-weight: bold;
+      border-bottom: 1px solid black;
+
+    }
+
+    li:first-of-type {
+
+      background: hsl(240, 30%, 75%);
+
+    }
+
+    li:last-of-type {
+
+      border: none;
 
     }
 
