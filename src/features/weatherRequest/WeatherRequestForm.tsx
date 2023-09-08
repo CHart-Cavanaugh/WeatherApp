@@ -14,13 +14,33 @@ export function WeatherRequestForm(): JSX.Element {
   const handleSubmit = (e: any) => {
 
     const weatherReqInput: HTMLElement | null = document.getElementById("weather-request-input");
+    let currSelection: null | Element;
+    let newSelection: Element;
 
 
 
     e.preventDefault();
 
-    if (testSubmissions.indexOf((weatherReqInput as HTMLInputElement).value) === -1)
+    if (testSubmissions.indexOf((weatherReqInput as HTMLInputElement).value) === -1) {
+
       dispatch(addSubmission((weatherReqInput as HTMLInputElement).value));
+
+
+      if (testSubmissions.length !== 0) {
+
+        currSelection = document.getElementsByClassName("selected")[0];
+        newSelection = (document.getElementById("request-history-list") as Element).children[0];
+
+
+
+        newSelection.className = "selected";
+        if (currSelection && currSelection !== newSelection)
+          currSelection.className = "";
+
+      }
+
+    }
+
 
 
 
