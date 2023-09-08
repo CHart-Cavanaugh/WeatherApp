@@ -11,7 +11,7 @@ export function WeatherRequestForm(): JSX.Element {
   let apiResponses = useSelector((state: { apiResponses: [] }) => state.apiResponses);
   let testSubmissions = useSelector((state: { testSubmissions: string[] }) => state.testSubmissions)
   let dispatch = useDispatch();
-  const handleSubmit = (e: Event) => {
+  const handleSubmit = (e: any) => {
 
     const weatherReqInput: HTMLElement | null = document.getElementById("weather-request-input");
 
@@ -19,7 +19,8 @@ export function WeatherRequestForm(): JSX.Element {
 
     e.preventDefault();
 
-    dispatch(addSubmission((weatherReqInput as HTMLInputElement).value));
+    if (testSubmissions.indexOf((weatherReqInput as HTMLInputElement).value) === -1)
+      dispatch(addSubmission((weatherReqInput as HTMLInputElement).value));
 
 
 
@@ -41,24 +42,6 @@ export function WeatherRequestForm(): JSX.Element {
 
   useEffect(() => {
 
-    const requestForm: HTMLElement | null = document.getElementById("weather-request-form");
-
-
-
-    requestForm?.addEventListener("submit", handleSubmit);
-
-
-
-    return () => {
-
-      requestForm?.removeEventListener("submit", handleSubmit);
-
-    }
-
-  }, []);
-
-  useEffect(() => {
-
     console.clear();
     console.log(testSubmissions);
 
@@ -77,7 +60,12 @@ export function WeatherRequestForm(): JSX.Element {
 
   return (
 
-    <form id="weather-request-form">
+    <form
+      id="weather-request-form"
+      onSubmit={(e) => {
+        handleSubmit(e);
+      }}
+    >
       <div>
         <input type="search" id="weather-request-input" name="city" placeholder="City or Postal Code" />
         <button>Submit</button>
