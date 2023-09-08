@@ -12,8 +12,14 @@ export function WeatherRequestHistory(): JSX.Element {
     const newSelection: any = e.target;
 
 
-    newSelection.className = "selected";
-    currSelection.className = "";
+
+    if (newSelection !== currSelection) {
+
+      newSelection.className = "selected";
+      currSelection.className = "";
+
+    }
+
 
   }
 
