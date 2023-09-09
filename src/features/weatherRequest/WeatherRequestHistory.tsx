@@ -25,47 +25,54 @@ export function WeatherRequestHistory(): JSX.Element {
 
   function getListItems(): JSX.Element[] {
 
-    return testSubmissions.map((value, index) => {
+    /* Get List Items Based On API Responses
+    */
+    return apiResponses.map((value, index) => {
+
+      const city = apiResponses[index].location.name;
+      let country = apiResponses[index].location.country;
+
+
+
+      country = country === "United States of America" ? "USA" : country;
+
+
 
       return (
-
         <li
           key={"request-" + (index + 1)}
           onClick={(e) => {
             handleClick(e);
           }}
-          className={index === 0 ? "selected" : ""}
         >
-          {(index + 1) + ") " + testSubmissions[index]}
+          {`${city}, ${country}`}
         </li>
-
       );
 
     })
 
 
 
-    /* Get List Items Based On API Responses
-  
-      return apiResponses.map((value, index) => {
-  
-        const city = apiResponses[index].location.name;
-        let country = apiResponses[index].location.country;
-  
-  
-  
-        country = country === "United States of America" ? "USA" : country;
-  
-  
-  
+    /* Get List Items Based On Form Submissions
+
+      return testSubmissions.map((value, index) => {
+
         return (
-          <li key={"request-" + (index + 1)}>
-            {`${city}, ${country}`}
+
+          <li
+            key={"request-" + (index + 1)}
+            onClick={(e) => {
+              handleClick(e);
+            }}
+            className={index === 0 ? "selected" : ""}
+          >
+            {(index + 1) + ") " + testSubmissions[index]}
           </li>
+
         );
-  
+
       })
-  
+
     */
 
   }
