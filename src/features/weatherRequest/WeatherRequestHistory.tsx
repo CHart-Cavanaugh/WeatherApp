@@ -34,7 +34,7 @@ export function WeatherRequestHistory(): JSX.Element {
 
 
 
-      country = country === "United States of America" ? "USA" : country;
+      country = country === "United States of America" || country === "USA United States of America" ? "USA" : country;
 
 
 
