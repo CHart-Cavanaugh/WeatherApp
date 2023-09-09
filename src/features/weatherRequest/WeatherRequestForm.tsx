@@ -86,18 +86,18 @@ export function WeatherRequestForm(): JSX.Element {
   useEffect(() => {
 
     console.clear();
-    console.log(testSubmissions);
+    console.log(apiResponses);
 
-  }, [testSubmissions]);
+  }, [apiResponses]);
 
 
 
   // useEffect(() => {
 
   //   console.clear();
-  //   console.log(apiResponses);
+  //   console.log(testSubmissions);
 
-  // }, [apiResponses]);
+  // }, [testSubmissions]);
 
 
 
