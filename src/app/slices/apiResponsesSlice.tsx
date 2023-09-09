@@ -11,7 +11,7 @@ const responseSlice: Slice = createSlice({
 
     addResponse: (state, action: PayloadAction<{}>) => {
 
-      state.push(action.payload);
+      state.unshift(action.payload);
       return state;
 
     }
