@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { WeatherRequestSidebar } from "./../weatherRequest/WeatherRequestSidebar";
 import { WeatherInformation } from "./../weatherInfo/WeatherInformation";
 import { InterfaceTabs } from "./../interfaceTabs/InterfaceTabs";
+import { useDispatch } from 'react-redux';
+import { unselect } from "../../app/slices/currentSelectionSlice";
 
 
 
@@ -109,6 +111,10 @@ const interfaceControls: WeatherInterfaceControls = {
 
 export function WeatherInterface(): JSX.Element {
 
+  const dispatch = useDispatch();
+
+
+
   useEffect(() => {
 
     const interfaceTabs: HTMLElement = document.getElementById("interface-tabs") as HTMLElement;
@@ -184,6 +190,12 @@ export function WeatherInterface(): JSX.Element {
       });
 
     };
+
+  }, []);
+
+  useEffect(() => {
+
+    dispatch(unselect(null));
 
   }, []);
 
