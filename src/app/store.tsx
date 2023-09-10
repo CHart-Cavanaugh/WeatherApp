@@ -17,3 +17,11 @@ export const store: Store = configureStore({
   },
 
 });
+
+export interface AppState {
+
+  testSubmissions: string[],
+  apiResponses: {}[],
+  currentSelection: number,
+
+};
