@@ -32,6 +32,6 @@ const currentSelectionSlice: Slice = createSlice({
 
 
 
-export const { unselect, selectInitial, selectClicked } = currentSelectionSlice.actions;
+export const { unselect, selectFirst, selectClicked } = currentSelectionSlice.actions;
 
 export default currentSelectionSlice.reducer;
