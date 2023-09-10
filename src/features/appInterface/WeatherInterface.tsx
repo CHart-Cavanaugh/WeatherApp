@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { WeatherRequestSidebar } from "./../weatherRequest/WeatherRequestSidebar";
 import { WeatherInformation } from "./../weatherInfo/WeatherInformation";
 import { InterfaceTabs } from "./../interfaceTabs/InterfaceTabs";
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { unselect } from "../../app/slices/currentSelectionSlice";
 
 
@@ -111,6 +111,7 @@ const interfaceControls: WeatherInterfaceControls = {
 
 export function WeatherInterface(): JSX.Element {
 
+  const currentSelection = useSelector((state: { currentSelection: number }) => state.currentSelection);
   const dispatch = useDispatch();
 
 
@@ -193,11 +194,21 @@ export function WeatherInterface(): JSX.Element {
 
   }, []);
 
+
+
   useEffect(() => {
 
     dispatch(unselect(null));
 
   }, []);
+
+
+
+  useEffect(() => {
+
+    console.log("Selection (By Index): " + currentSelection);
+
+  }, [currentSelection]);
 
 
 
