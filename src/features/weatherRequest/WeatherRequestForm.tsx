@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { addResponse } from '../../app/slices/apiResponsesSlice';
+import { selectFirst } from '../../app/slices/currentSelectionSlice';
 import { addSubmission } from '../../app/slices/testSubmissionsSlice';
 
 
@@ -35,21 +36,7 @@ export function WeatherRequestForm(): JSX.Element {
         if (!apiResponses.some(hasName)) {
 
           dispatch(addResponse(json));
-
-
-
-          if (apiResponses.length !== 0) {
-
-            currSelection = document.getElementsByClassName("selected")[0];
-            newSelection = (document.getElementById("request-history-list") as Element).children[0];
-
-
-
-            newSelection.className = "selected";
-            if (currSelection && currSelection !== newSelection)
-              currSelection.className = "";
-
-          }
+          dispatch(selectFirst(null));
 
         }
 
@@ -83,6 +70,7 @@ export function WeatherRequestForm(): JSX.Element {
 
 
 
+  // MOVE "useEffect" CALLS THAT LOG DATA TO "WeatherInterface" COMPONENT
   useEffect(() => {
 
     console.clear();
