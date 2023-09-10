@@ -1,9 +1,15 @@
+import { AppState } from '../../app/store';
+
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from "react";
+
+import { unselect } from "../../app/slices/currentSelectionSlice";
+
 import { WeatherRequestSidebar } from "./../weatherRequest/WeatherRequestSidebar";
 import { WeatherInformation } from "./../weatherInfo/WeatherInformation";
 import { InterfaceTabs } from "./../interfaceTabs/InterfaceTabs";
-import { useDispatch, useSelector } from 'react-redux';
-import { unselect } from "../../app/slices/currentSelectionSlice";
+
+
 
 
 
@@ -111,7 +117,7 @@ const interfaceControls: WeatherInterfaceControls = {
 
 export function WeatherInterface(): JSX.Element {
 
-  const currentSelection = useSelector((state: { currentSelection: number }) => state.currentSelection);
+  const { testSubmissions, apiResponses, currentSelection } = useSelector((state: AppState) => state);
   const dispatch = useDispatch();
 
 
@@ -204,11 +210,38 @@ export function WeatherInterface(): JSX.Element {
 
 
 
+  /* - - - - - - - - - - -  Data Logging  - - - - - - - - - - - */
+
+
+
+  useEffect(() => {
+
+    console.clear();
+
+  }, [testSubmissions, apiResponses, currentSelection]);
+
+  useEffect(() => {
+
+    console.log("Submissions: " + testSubmissions);
+
+  }, [testSubmissions]);
+
+  useEffect(() => {
+
+    console.log("API Responses: \n");
+    console.log(apiResponses);
+
+  }, [apiResponses]);
+
   useEffect(() => {
 
     console.log("Selection (By Index): " + currentSelection);
 
   }, [currentSelection]);
+
+
+
+  /* - - - - - - - - - - Component Rendering - - - - - - - - - - */
 
 
 

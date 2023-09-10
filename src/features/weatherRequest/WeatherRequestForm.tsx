@@ -9,9 +9,12 @@ import { addSubmission } from '../../app/slices/testSubmissionsSlice';
 
 export function WeatherRequestForm(): JSX.Element {
 
-  let apiResponses = useSelector((state: { apiResponses: [] }) => state.apiResponses);
-  let testSubmissions = useSelector((state: { testSubmissions: string[] }) => state.testSubmissions)
-  let dispatch = useDispatch();
+  const apiResponses = useSelector((state: { apiResponses: [] }) => state.apiResponses);
+  // const testSubmissions = useSelector((state: { testSubmissions: string[] }) => state.testSubmissions);
+  const dispatch = useDispatch();
+
+
+
   const handleSubmit = (e: any) => {
 
     const weatherReqInput: HTMLElement | null = document.getElementById("weather-request-input");
@@ -67,25 +70,6 @@ export function WeatherRequestForm(): JSX.Element {
     */
 
   };
-
-
-
-  // MOVE "useEffect" CALLS THAT LOG DATA TO "WeatherInterface" COMPONENT
-  useEffect(() => {
-
-    console.clear();
-    console.log(apiResponses);
-
-  }, [apiResponses]);
-
-
-
-  // useEffect(() => {
-
-  //   console.clear();
-  //   console.log(testSubmissions);
-
-  // }, [testSubmissions]);
 
 
 
