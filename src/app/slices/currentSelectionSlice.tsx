@@ -9,4 +9,29 @@
 
 */
 
-export { };
+
+
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { Slice } from "@reduxjs/toolkit";
+
+
+
+const currentSelectionSlice: Slice = createSlice({
+
+  name: "currentSelection",
+  initialState: -1,
+  reducers: {
+
+    unselect: state => state = -1,
+    selectFirst: state => state = 0,
+    selectClicked: (state, action) => state = action.payload
+
+  }
+
+});
+
+
+
+export const { unselect, selectInitial, selectClicked } = currentSelectionSlice.actions;
+
+export default currentSelectionSlice.reducer;
