@@ -9,7 +9,7 @@ const responseSlice: Slice = createSlice({
   initialState: ([] as {}[]),
   reducers: {
 
-    addResponse: (state, action: PayloadAction<{}>) => {
+    addResponse: (state, action) => {
 
       state.unshift(action.payload);
       return state;

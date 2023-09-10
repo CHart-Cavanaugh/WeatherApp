@@ -9,7 +9,7 @@ const testSubmissionsSlice: Slice = createSlice({
   initialState: ([] as string[]),
   reducers: {
 
-    addSubmission: (state, action: PayloadAction<string>) => {
+    addSubmission: (state, action) => {
 
       state.unshift(action.payload);
       return state;
