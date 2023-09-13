@@ -117,6 +117,7 @@ const interfaceControls: WeatherInterfaceControls = {
 
 export function WeatherInterface(): JSX.Element {
 
+  const submittedValue = useSelector((state: AppState) => state.submittedValue);
   const testSubmissions = useSelector((state: AppState) => state.testSubmissions);
   const apiResponses = useSelector((state: AppState) => state.apiResponses);
   const currentSelection = useSelector((state: AppState) => state.currentSelection);
@@ -221,24 +222,27 @@ export function WeatherInterface(): JSX.Element {
 
     console.clear();
 
-  }, [testSubmissions, apiResponses, currentSelection]);
+    console.log("Submitted Value: \n");
+    console.log(submittedValue);
+    console.log("\n");
 
-  useEffect(() => {
-
-    console.log("Submissions: " + testSubmissions);
-
-  }, [testSubmissions]);
-
-  useEffect(() => {
+    console.log("Test Submissions: \n");
+    console.log(testSubmissions);
+    console.log("\n");
 
     console.log("API Responses: \n");
     console.log(apiResponses);
+    console.log("\n");
 
-  }, [apiResponses]);
+    console.log("Selection (By Index): \n");
+    console.log(currentSelection);
+
+  }, [submittedValue]);
 
   useEffect(() => {
 
-    console.log("Selection (By Index): " + currentSelection);
+    console.log("Selection (By Index): \n");
+    console.log(currentSelection);
 
   }, [currentSelection]);
 
