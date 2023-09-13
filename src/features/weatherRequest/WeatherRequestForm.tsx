@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
+import { AppState } from '../../app/store';
+
+import { submitValue } from '../../app/slices/submittedValueSlice';
 import { addResponse } from '../../app/slices/apiResponsesSlice';
 import { selectFirst } from '../../app/slices/currentSelectionSlice';
 import { addSubmission } from '../../app/slices/testSubmissionsSlice';
@@ -9,34 +12,49 @@ import { addSubmission } from '../../app/slices/testSubmissionsSlice';
 
 export function WeatherRequestForm(): JSX.Element {
 
-  const apiResponses = useSelector((state: { apiResponses: [] }) => state.apiResponses);
-  // const testSubmissions = useSelector((state: { testSubmissions: string[] }) => state.testSubmissions);
+  const apiResponses = useSelector((state: AppState) => state.apiResponses);
   const dispatch = useDispatch();
 
 
 
   const handleSubmit = (e: any) => {
 
-    const weatherReqInput: HTMLElement | null = document.getElementById("weather-request-input");
-    let currSelection: null | Element;
-    let newSelection: Element;
+    let weatherReqInput: HTMLInputElement = (document.getElementById("weather-request-input") as HTMLInputElement);
 
 
 
     e.preventDefault();
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=d790a10e5fe74e8db6260020231908&q=${(weatherReqInput as HTMLInputElement).value}&days=2&aqi=no&alerts=no`)
+    fetch(`http://api.weatherapi.com/v1/forecast.json?key=d790a10e5fe74e8db6260020231908&q=${weatherReqInput.value}&days=2&aqi=no&alerts=no`)
       .then((response) => response.json())
       .then((json) => {
 
-        const responseCity = json.location.name;
-        function hasName(element: any): boolean {
+        function checkIfResponseExists(): boolean {
 
-          return element.location.name === responseCity;
+          function checkIfElementMatchesResponse(element: any) {
+
+            const responseCity = json.location.name;
+
+
+
+            return element.location.name === responseCity;
+
+          }
+
+
+
+          return apiResponses.some(checkIfElementMatchesResponse);
 
         }
 
-        if (!apiResponses.some(hasName)) {
+        const responseAlreadyExists = checkIfResponseExists();
+
+
+
+        if (!responseAlreadyExists) {
+
+          dispatch(submitValue(weatherReqInput.value));
+          weatherReqInput.value = "";
 
           dispatch(addResponse(json));
           dispatch(selectFirst(null));
@@ -44,6 +62,9 @@ export function WeatherRequestForm(): JSX.Element {
         }
 
       });
+
+
+
 
     /* 1. Add submission to testSubmissions
 
