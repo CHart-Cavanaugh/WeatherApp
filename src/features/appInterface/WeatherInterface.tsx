@@ -117,7 +117,10 @@ const interfaceControls: WeatherInterfaceControls = {
 
 export function WeatherInterface(): JSX.Element {
 
-  const { testSubmissions, apiResponses, currentSelection } = useSelector((state: AppState) => state);
+  const testSubmissions = useSelector((state: AppState) => state.testSubmissions);
+  const apiResponses = useSelector((state: AppState) => state.apiResponses);
+  const currentSelection = useSelector((state: AppState) => state.currentSelection);
+
   const dispatch = useDispatch();
 
 
