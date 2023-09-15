@@ -89,4 +89,14 @@ function getCurrentVisibilityInfo(selectedInfo: any): string {
 
 
 
+export {
+  getCurrentLocation,
+  getCurrentTemp,
+  getCurrentWindInfo,
+  getCurrentHumidityInfo,
+  getCurrentUV,
+  getCurrentPressureInfo,
+  getCurrentVisibilityInfo
+};
+
 export * as infoAccessToolkit from './infoAccessToolkit';
