@@ -232,10 +232,10 @@ export function WeatherInterface(): JSX.Element {
 
     console.log("API Responses: \n");
     console.log(apiResponses);
-    console.log("\n");
+    // console.log("\n");
 
-    console.log("Selection (By Index): \n");
-    console.log(currentSelection);
+    // console.log("Selection (By Index): \n");
+    // console.log(currentSelection);
 
   }, [submittedValue]);
 
