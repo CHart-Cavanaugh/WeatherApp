@@ -86,3 +86,7 @@ function getCurrentVisibilityInfo(selectedInfo: any): string {
   return currVisibility;
 
 }
+
+
+
+export * as infoAccessToolkit from './infoAccessToolkit';
