@@ -226,9 +226,9 @@ export function WeatherInterface(): JSX.Element {
     console.log(submittedValue);
     console.log("\n");
 
-    console.log("Test Submissions: \n");
-    console.log(testSubmissions);
-    console.log("\n");
+    // console.log("Test Submissions: \n");
+    // console.log(testSubmissions);
+    // console.log("\n");
 
     console.log("API Responses: \n");
     console.log(apiResponses);
