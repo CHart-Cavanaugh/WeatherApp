@@ -239,12 +239,12 @@ export function WeatherInterface(): JSX.Element {
 
   }, [submittedValue]);
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    console.log("Selection (By Index): \n");
-    console.log(currentSelection);
+  //   console.log("Selection (By Index): \n");
+  //   console.log(currentSelection);
 
-  }, [currentSelection]);
+  // }, [currentSelection]);
 
 
 
