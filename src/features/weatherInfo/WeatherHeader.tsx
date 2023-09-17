@@ -51,6 +51,22 @@ export function WeatherHeader(): JSX.Element {
               {infoAccessToolkit.getCurrentTemp(selectedInfo)}
             </p>
           </div>
+          <div id="condition-info">
+            <h4 id="current-condition-label"
+              className="info-label"
+            >
+              Condition:
+            </h4>
+            <figure>
+              <img src="" alt="leedle" />
+              <figcaption id="current-condition-val"
+                className="info-val"
+              >
+                "clear"
+              </figcaption>
+            </figure>
+            <p></p>
+          </div>
         </div>
         <div id="main-col-right"
           className="main-column"
