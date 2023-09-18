@@ -30,8 +30,9 @@
 
   #main-col-left {
 
-    flex-basis: 40%;
+    flex-basis: 50%;
     height: 100%;
+    display: flex;
 
   }
 
@@ -63,6 +64,12 @@
 
   }
 
+  #temp-info,
+  #condition-info {
+
+    flex-basis: 50%;
+
+  }
 
 
   #temp-info {
@@ -71,7 +78,7 @@
     flex-direction: column;
     align-items: center;
     background: grey;
-    justify-content: space-around;
+    justify-content: space-between;
     height: 100%;
 
 
@@ -80,7 +87,8 @@
 
       text-align: center;
       width: 100%;
-      padding: 0 .5rem;
+      padding: .5rem;
+      background: grey;
 
     }
 
@@ -117,6 +125,10 @@
       width: 100%;
       text-align: center;
       font-size: 3rem;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
 
     }
 
@@ -129,13 +141,65 @@
 
   }
 
+  #condition-info {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+
+
+
+    #current-condition-label {
+
+      text-align: center;
+      background: blue;
+      padding: .5rem;
+      width: 100%;
+
+    }
+
+    figure {
+
+      margin: 0;
+      justify-self: center;
+      align-self: center;
+      background: green;
+      display: flex;
+      flex-basis: 100%;
+      width: 100%;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: center;
+
+      img {
+
+        justify-self: center;
+        flex-grow: 2;
+        background: red;
+        width: 100%;
+        display: flex;
+
+      }
+
+      figcaption {
+
+        padding: .5rem 0;
+
+      }
+
+    }
+
+  }
+
 }
 
 
 
 .info-label,
 .info-val,
-.temp-unit {
+.temp-unit,
+#condition-info img[alt] {
 
   color: white;
   margin: 0;
@@ -163,7 +227,7 @@
 
     #main-col-left {
 
-      flex-basis: 10rem;
+      flex-basis: 50%;
 
     }
 
