@@ -25,6 +25,12 @@ function getCurrentTemp(selectedInfo: any): number {
 
 }
 
+function getCurrentCondition(selectedInfo: any): {} {
+
+  return {};
+
+}
+
 function getCurrentWindInfo(selectedInfo: any): string {
 
   const getSelectedWindInfo: () => string = () => (
