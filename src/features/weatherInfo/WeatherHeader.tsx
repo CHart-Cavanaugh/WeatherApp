@@ -58,14 +58,13 @@ export function WeatherHeader(): JSX.Element {
               Condition:
             </h4>
             <figure>
-              <img src="" alt="leedle" />
+              <img src="" alt="current condition" />
               <figcaption id="current-condition-val"
                 className="info-val"
               >
                 "clear"
               </figcaption>
             </figure>
-            <p></p>
           </div>
         </div>
         <div id="main-col-right"
