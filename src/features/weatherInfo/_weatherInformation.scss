@@ -1,8 +1,10 @@
 #weather-info {
 
-  height: 100%;
+  height: calc(100% - 7.5%);
   flex-basis: 100%;
   display: none;
+  position: relative;
+  bottom: 0;
 
 
 
@@ -21,6 +23,7 @@
     section {
 
       background: transparent;
+      height: 65%;
 
     }
 
