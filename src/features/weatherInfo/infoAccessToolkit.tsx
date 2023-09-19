@@ -9,14 +9,26 @@ interface Condition {
 
 function getCurrentLocation(selectedInfo: any): string {
 
-  const getSelectedLocation: () => string = () => (
+  const getSelectedLocation: () => string = () => {
 
-    (selectedInfo as { location: { name: string } }).location.name +
-    ", " +
-    (selectedInfo as { location: { country: string } }).location.country
+    const cityName: string = (selectedInfo as { location: { name: string } }).location.name;
+    // let countryName: string = (selectedInfo as { location: { country: string } }).location.country;
 
-  );
-  const currLocation = selectedInfo ? getSelectedLocation() : "someCity, someCountry";
+
+
+    // if (countryName.includes("USA") || countryName.includes("United States of America"))
+    //   countryName = "USA";
+    // else if (countryName.includes("UK") || countryName.includes("United Kingdom"))
+    //   countryName = "UK";
+
+
+
+    return `${cityName}`;
+
+  };
+  const DEFAULT_LOCATION = "someCity";
+  const currLocation = selectedInfo ? getSelectedLocation() : DEFAULT_LOCATION;
+
 
 
   return currLocation;
