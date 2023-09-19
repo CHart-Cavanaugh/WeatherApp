@@ -1,3 +1,12 @@
+interface Condition {
+
+  text: string,
+  icon: string,
+
+};
+
+
+
 function getCurrentLocation(selectedInfo: any): string {
 
   const getSelectedLocation: () => string = () => (
@@ -25,9 +34,23 @@ function getCurrentTemp(selectedInfo: any): number {
 
 }
 
-function getCurrentCondition(selectedInfo: any): {} {
+function getCurrentCondition(selectedInfo: any): Condition {
 
-  return {};
+  const getSelectedCondition: () => Condition = () => selectedInfo.current.condition;
+
+
+
+  const DEFAULT_CONDITION: Condition = {
+
+    text: "clear",
+    icon: "//cdn.weatherapi.com/weather/64x64/night/113.png",
+
+  };
+  const currentCondition: Condition = selectedInfo ? getSelectedCondition() : DEFAULT_CONDITION;
+
+
+
+  return currentCondition;
 
 }
 
@@ -98,6 +121,7 @@ function getCurrentVisibilityInfo(selectedInfo: any): string {
 export {
   getCurrentLocation,
   getCurrentTemp,
+  getCurrentCondition,
   getCurrentWindInfo,
   getCurrentHumidityInfo,
   getCurrentUV,
