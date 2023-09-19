@@ -23,6 +23,11 @@ export function WeatherHeader(): JSX.Element {
           {infoAccessToolkit.getCurrentLocation(selectedInfo)}
         </h3>
       </section>
+      <div id="time-bar">
+        <p>
+          <span id="time-bar-day">Monday, </span> <span id="time-bar-time">0:00 AM</span>
+        </p>
+      </div>
       <section id="main-info">
         <div id="main-col-left"
           className="main-column"

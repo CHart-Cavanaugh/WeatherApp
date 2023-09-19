@@ -18,7 +18,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   overflow-y: scroll;
-  flex-basis: calc(100% - 2rem);
+  flex-basis: calc(80% - 2rem);
 
 
 
@@ -220,6 +220,26 @@
 
 }
 
+#time-bar {
+
+  height: 20%;
+  display: block;
+  background: grey;
+  display: flex;
+  align-items: center;
+
+
+
+  p {
+
+    width: 100%;
+    padding: 0 .25rem;
+    margin: 0;
+    font-size: 1.4rem;
+
+  }
+
+}
 
 
 @media (min-width: 768px) {
@@ -227,7 +247,7 @@
   #main-info {
 
     overflow-x: hidden;
-    // overflow-y: hidden;
+    overflow-y: hidden;
     justify-content: space-around;
 
 
