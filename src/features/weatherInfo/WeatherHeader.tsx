@@ -33,11 +33,11 @@ export function WeatherHeader(): JSX.Element {
           className="main-column"
         >
           <div id="temp-info">
-            <h4 id="current-temp-label"
+            {/* <h4 id="current-temp-label"
               className="info-label"
             >
               Temperature:
-            </h4>
+            </h4> */}
             <div id="temp-unit-labels">
               <p id="temp-unit-celcius"
                 className="temp-unit"
@@ -57,11 +57,11 @@ export function WeatherHeader(): JSX.Element {
             </p>
           </div>
           <div id="condition-info">
-            <h4 id="current-condition-label"
+            {/* <h4 id="current-condition-label"
               className="info-label"
             >
               Condition:
-            </h4>
+            </h4> */}
             <figure>
               <img src={infoAccessToolkit.getCurrentCondition(selectedInfo).icon} alt="current condition" />
               <figcaption id="current-condition-val"
