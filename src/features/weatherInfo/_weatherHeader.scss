@@ -75,6 +75,16 @@
 
       */
       padding: .2rem;
+      border: 1px solid black;
+      display: flex;
+      flex-direction: column;
+      row-gap: .2rem;
+
+      .info-label {
+
+        border-bottom: 1px solid white;
+
+      }
 
     }
 
