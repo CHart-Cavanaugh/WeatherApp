@@ -35,6 +35,45 @@ function getCurrentLocation(selectedInfo: any): string {
 
 }
 
+function getCurrentDay(selectedInfo: any): string {
+
+  const DEFAULT_RETURN: string = "";
+  const DAYS_OF_WEEK: { [index: number]: string } = {
+
+    0: "Monday",
+    1: "Tuesday",
+    2: "Wednesday",
+    3: "Thursday",
+    4: "Friday",
+    5: "Saturday",
+    6: "Sunday"
+
+  };
+
+
+
+  let currentDate: null | Date = null;
+  let currentDay: string = "";
+
+
+
+  if (selectedInfo) {
+
+    currentDate = new Date((selectedInfo as { location: { localtime: string } }).location.localtime);
+    currentDay = DAYS_OF_WEEK[currentDate.getDay()];
+
+
+
+    return currentDay;
+
+  }
+
+
+
+  return DEFAULT_RETURN;
+
+}
+
 function getCurrentTemp(selectedInfo: any): number {
 
   const getSelectedTemp: () => number = () => (selectedInfo as { current: { temp_f: number } }).current.temp_f;
@@ -132,6 +171,7 @@ function getCurrentVisibilityInfo(selectedInfo: any): string {
 
 export {
   getCurrentLocation,
+  getCurrentDay,
   getCurrentTemp,
   getCurrentCondition,
   getCurrentWindInfo,
