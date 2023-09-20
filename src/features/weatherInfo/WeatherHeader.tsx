@@ -24,7 +24,9 @@ export function WeatherHeader(): JSX.Element {
         </h3>
       </section>
       <section id="day-info">
-        <p id="day-val">
+        <p id="day-val"
+          className="info-val"
+        >
           {infoAccessToolkit.getCurrentDay(selectedInfo)}
         </p>
       </section>
