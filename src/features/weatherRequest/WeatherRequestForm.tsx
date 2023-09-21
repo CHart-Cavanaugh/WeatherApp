@@ -25,7 +25,7 @@ export function WeatherRequestForm(): JSX.Element {
 
     e.preventDefault();
 
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=d790a10e5fe74e8db6260020231908&q=${weatherReqInput.value}&days=2&aqi=no&alerts=no`)
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=d790a10e5fe74e8db6260020231908 &q=${weatherReqInput.value}&days=2&aqi=no&alerts=no`)
       .then((response) => response.json())
       .then((json) => {
 
