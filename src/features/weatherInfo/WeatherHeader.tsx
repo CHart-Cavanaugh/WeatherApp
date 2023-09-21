@@ -17,18 +17,20 @@ export function WeatherHeader(): JSX.Element {
 
     <header id="weather-header">
       <section id="location-info">
-        <h3 id="location-val"
-          className="info-label"
-        >
-          {infoAccessToolkit.getCurrentLocation(selectedInfo)}
-        </h3>
-      </section>
-      <section id="day-info">
-        <p id="day-val"
-          className="info-val"
-        >
-          {infoAccessToolkit.getCurrentDay(selectedInfo)}
-        </p>
+        <section id="city-info">
+          <h3 id="city-val"
+            className="info-val"
+          >
+            {infoAccessToolkit.getCurrentLocation(selectedInfo)}
+          </h3>
+        </section>
+        <section id="day-info">
+          <h3 id="day-val"
+            className="info-val"
+          >
+            {infoAccessToolkit.getCurrentDay(selectedInfo)}
+          </h3>
+        </section>
       </section>
       <section id="main-info">
         <div id="main-col-left"

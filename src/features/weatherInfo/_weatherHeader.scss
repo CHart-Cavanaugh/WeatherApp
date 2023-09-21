@@ -1,39 +1,9 @@
 #location-info {
 
-  flex-basis: 2rem;
-
-
-
-  #location-val {
-
-    font-size: 1.2rem;
-    display: flex;
-    align-items: center;
-    background: red;
-    padding: .25rem;
-
-  }
-
-}
-
-#day-info {
-
-  height: 20%;
-  background: grey;
   display: flex;
-  align-items: center;
-
-
-
-  #day-val {
-
-    width: 100%;
-    padding: 0 .25rem;
-    margin: 0;
-    font-size: 1.1rem;
-
-  }
-
+  flex-basis: 2rem;
+  justify-content: space-between;
+  width: 100%
 }
 
 #main-info {
@@ -42,7 +12,7 @@
   justify-content: space-around;
   flex-wrap: wrap;
   overflow-y: scroll;
-  flex-basis: calc(80% - 2rem);
+  flex-basis: calc(100% - 2rem);
 
 
 
@@ -108,6 +78,50 @@
 .info-label {
 
   margin: 0;
+
+}
+
+
+
+#city-info {
+
+  flex-basis: 75%;
+
+
+
+  #city-val {
+
+    display: flex;
+    align-items: center;
+    padding-left: .25rem;
+    height: 100%;
+    font-size: 1rem;
+    background: red;
+
+  }
+
+}
+
+#day-info {
+
+  height: 100%;
+  width: 25%;
+
+
+
+  #day-val {
+
+    width: 100%;
+    height: 100%;
+    padding: 0 .25rem;
+    margin: 0;
+    background: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+
+  }
 
 }
 
@@ -246,9 +260,13 @@
 
 @media (min-width: 768px) {
 
-  #location-info {
+  #city-info {
 
-    #location-val {
+    flex-basis: 75%;
+
+
+
+    #city-val {
 
       font-size: 2rem;
 
@@ -258,13 +276,19 @@
 
   #day-info {
 
+    flex-basis: 25%;
+
+
+
     #day-val {
 
-      font-size: 1.4rem;
+      font-size: 2rem;
 
     }
 
   }
+
+
 
   #main-info {
 
