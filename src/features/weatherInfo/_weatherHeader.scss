@@ -58,6 +58,12 @@
 
     }
 
+    div:first-of-type {
+
+      flex-basis: 35%;
+
+    }
+
   }
 
 }
@@ -248,6 +254,7 @@
 
     figcaption {
 
+      text-align: center;
       padding: .25rem 0;
 
     }
