@@ -14,15 +14,8 @@ type HourForecasts = [
 ];
 
 
-const TEMP_FORECASTS: HourForecasts = [1, 2, 3, 4, 5];
 
-
-
-const TEMP_FORECAST_REFRESH: ((val: number) => number) = (
-
-  (val: number) => val === 12 ? 0 : val + 1
-
-);
+const DEFAULT_HOURLY_TIMESTAMPS: HourForecasts = [1, 2, 3, 4, 5];
 
 
 
@@ -32,7 +25,7 @@ export function HourlyForecast(): JSX.Element {
   function getUpdatedHours(): HourForecasts {
 
     const currentHour: number = new Date().getHours();
-    const updatedHours: HourForecasts = TEMP_FORECASTS;
+    const updatedHours: HourForecasts = DEFAULT_HOURLY_TIMESTAMPS;
 
 
 
