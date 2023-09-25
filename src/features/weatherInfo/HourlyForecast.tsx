@@ -55,17 +55,12 @@ export function HourlyForecast(): JSX.Element {
 
   }
 
+  function getHourlyForecasts(timestamps: HourForecasts): JSX.Element {
 
+    return (
 
-  const [forecastTimestamps, setForecastTimestamps]: [HourForecasts, Function] = useState(getUpdatedHours());
-
-
-
-  return (
-
-    <section id="weather-hourly-forecast">
-      <section id="hourly-forecast-container">
-        {forecastTimestamps.map((val, index) => {
+      <>
+        {timestamps.map((val, index) => {
 
           return (
 
@@ -98,6 +93,23 @@ export function HourlyForecast(): JSX.Element {
           )
 
         })}
+      </>
+
+    );
+
+  }
+
+
+
+  const [forecastTimestamps, setForecastTimestamps]: [HourForecasts, Function] = useState(getUpdatedHours());
+
+
+
+  return (
+
+    <section id="weather-hourly-forecast">
+      <section id="hourly-forecast-container">
+        {getHourlyForecasts(forecastTimestamps)}
       </section>
     </section>
 
