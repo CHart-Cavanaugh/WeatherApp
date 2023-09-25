@@ -45,6 +45,16 @@ export function HourlyForecast(): JSX.Element {
 
   }
 
+  function isBeforeMidday(): boolean {
+
+    const dayHour = new Date().getHours();
+
+
+
+    return dayHour < 12;
+
+  }
+
 
 
   const [forecastTimestamps, setForecastTimestamps]: [HourForecasts, Function] = useState(getUpdatedHours());
@@ -79,7 +89,7 @@ export function HourlyForecast(): JSX.Element {
                   {
                     val === 0 ? <span>Now</span> :
                       val === 12 ? <span>Noon</span> :
-                        <span><span>{val}</span> <span>AM</span></span>
+                        <span><span>{val}</span> <span>{isBeforeMidday() ? "AM" : "PM"}</span></span>
                   }
                 </h4>
               </footer>
