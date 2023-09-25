@@ -29,22 +29,32 @@ const TEMP_FORECAST_REFRESH: ((val: number) => number) = (
 
 export function HourlyForecast(): JSX.Element {
 
-  const [forecasts, setForecasts]: [HourForecasts, Function] = useState(TEMP_FORECASTS);
+  function getUpdatedHours(): HourForecasts {
+
+    const currentHour: number = new Date().getHours();
+    const updatedHours: HourForecasts = TEMP_FORECASTS;
 
 
 
-  function refreshHourForecasts(refreshMethod: (val: ForecastInfoType) => ForecastInfoType): void {
+    for (let i = 0; i < updatedHours.length; i++)
+      updatedHours[i] = (
 
-    //Notes:
-    /*
+        currentHour + i < 12 ? currentHour + i
+          : currentHour + i < 24 ? currentHour + i - 12
+            : currentHour + i - 24
 
-      - Create a copy of forecasts and store it in a temporary array.
-      - Update each of the values in the temporary array using the refresh method.
-      - Update forecasts using the updated temporary array.
+      );
 
-    */
+
+
+
+    return updatedHours;
 
   }
+
+
+
+  const [forecasts, setForecasts]: [HourForecasts, Function] = useState(getUpdatedHours());
 
 
 
@@ -74,9 +84,9 @@ export function HourlyForecast(): JSX.Element {
               <footer className="hourly-info hourly-hour">
                 <h4>
                   {
-                    index === 0 ? <span>Now</span> :
-                      index === 12 ? <span>Noon</span> :
-                        <span><span>{index}</span> <span>AM</span></span>
+                    val === 0 ? <span>Now</span> :
+                      val === 12 ? <span>Noon</span> :
+                        <span><span>{val}</span> <span>AM</span></span>
                   }
                 </h4>
               </footer>
