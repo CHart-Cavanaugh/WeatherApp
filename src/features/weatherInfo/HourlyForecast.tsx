@@ -74,7 +74,7 @@ export function HourlyForecast(): JSX.Element {
                   <span>"N"</span> - <span>0</span> mph
                 </p>
               </section>
-              <footer className="hourly-info hourly-hour">
+              <footer className="hourly-info hourly-timestamp">
                 <h4>
                   {
                     val === 0 ? <span>Now</span> :
