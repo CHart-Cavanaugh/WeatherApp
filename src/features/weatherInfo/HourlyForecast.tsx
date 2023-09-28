@@ -1,3 +1,5 @@
+import { AppState } from '../../app/store';
+import { useSelector } from 'react-redux';
 import { useState } from 'react';
 
 
@@ -22,9 +24,12 @@ const DEFAULT_HOURLY_TIMESTAMPS: HourForecasts = [1, 2, 3, 4, 5];
 
 export function HourlyForecast(): JSX.Element {
 
-  function getUpdatedHours(): HourForecasts {
+  function getUpdatedHours(selectedInfo: any): HourForecasts {
 
-    const currentHour: number = new Date().getHours();
+    const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
+    const localDate: Date = new Date();
+    const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }))
+    const currentHour: number = selectedInfo ? currentDate.getHours() : 0;
     const updatedHours: HourForecasts = DEFAULT_HOURLY_TIMESTAMPS;
 
 
@@ -40,18 +45,20 @@ export function HourlyForecast(): JSX.Element {
 
 
 
-
     return updatedHours;
 
   }
 
-  function isBeforeMidday(): boolean {
+  function isBeforeMidday(selectedInfo: any, hourOffset: number = 0): boolean {
 
-    const dayHour = new Date().getHours();
+    const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
+    const localDate: Date = new Date();
+    const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }))
+    const currentHour: number = (selectedInfo ? currentDate.getHours() : 0) + hourOffset;
 
 
 
-    return dayHour < 12;
+    return currentHour < 12;
 
   }
 
@@ -82,9 +89,9 @@ export function HourlyForecast(): JSX.Element {
               <footer className="hourly-info hourly-timestamp">
                 <h4>
                   {
-                    val === 0 ? <span>Now</span> :
-                      val === 12 ? <span>Noon</span> :
-                        <span><span>{val}</span> <span>{isBeforeMidday() ? "AM" : "PM"}</span></span>
+                    val === 0 && isBeforeMidday(selectedInfo, index) ? <span>Midnight</span>
+                      : val === 0 && !isBeforeMidday(selectedInfo, index) ? <span>Noon</span>
+                        : <span><span>{val}</span> <span>{isBeforeMidday(selectedInfo, index) ? "AM" : "PM"}</span></span>
                   }
                 </h4>
               </footer>
@@ -101,7 +108,10 @@ export function HourlyForecast(): JSX.Element {
 
 
 
-  const [forecastTimestamps, setForecastTimestamps]: [HourForecasts, Function] = useState(getUpdatedHours());
+  const apiResponses = useSelector((state: AppState) => state.apiResponses);
+  const currentSelection: number = useSelector((state: AppState) => state.currentSelection);
+  const selectedInfo = apiResponses[currentSelection];
+  const [forecastTimestamps, setForecastTimestamps]: [HourForecasts, Function] = useState(getUpdatedHours(selectedInfo));
 
 
 
