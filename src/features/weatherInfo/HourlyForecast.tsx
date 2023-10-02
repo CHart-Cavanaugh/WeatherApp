@@ -54,8 +54,9 @@ export function HourlyForecast(): JSX.Element {
     const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
     const localDate: Date = new Date();
     const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }))
-    const currentHour: number = (selectedInfo ? currentDate.getHours() : 0) + hourOffset;
+    let currentHour: number = (selectedInfo ? currentDate.getHours() : 0) + hourOffset;
 
+    currentHour = currentHour < 24 ? currentHour : currentHour - 24;
 
 
     return currentHour < 12;
