@@ -24,12 +24,18 @@ const DEFAULT_HOURLY_TIMESTAMPS: HourForecasts = [1, 2, 3, 4, 5];
 
 export function HourlyForecast(): JSX.Element {
 
+  function getCurrentHour(selectedInfo: any, currentDate: Date): number {
+
+    return selectedInfo ? currentDate.getHours() : 0;
+
+  }
+
   function getUpdatedHours(selectedInfo: any): HourForecasts {
 
     const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
     const localDate: Date = new Date();
     const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }))
-    const currentHour: number = selectedInfo ? currentDate.getHours() : 0;
+    const currentHour: number = getCurrentHour(selectedInfo, currentDate);
     const updatedHours: HourForecasts = DEFAULT_HOURLY_TIMESTAMPS;
 
 
@@ -63,16 +69,40 @@ export function HourlyForecast(): JSX.Element {
 
   }
 
-  function getHourlyForecasts(timestamps: HourForecasts): JSX.Element {
+  function getHourlyForecasts(selectedInfo: any, timestamps: HourForecasts): JSX.Element {
+
+    const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
+    const localDate: Date = new Date();
+    const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }));
+    const currentHour: number = getCurrentHour(selectedInfo, currentDate);
+    const selectedForecastDays: { date: string }[] = selectedInfo ? (selectedInfo as { forecast: { forecastday: [] } }).forecast.forecastday : [];
+    const forecastDaysObj: { [index: number]: {} } = {};
+
+
+
+    if (selectedInfo) {
+
+      for (let i = 0; i < 2; i++)
+        forecastDaysObj[(new Date((selectedForecastDays as { date: string }[])[i].date).getDate())] = selectedForecastDays[i];
+
+    }
+
+
 
     return (
 
       <>
         {timestamps.map((val, index) => {
 
+          // const forecastDay: {} = forecastDaysObj[currentDate.getDate()];
+
+
+
           return (
 
             <div key={`hour-forecast-${index}`}>
+              <section key="hourly-condition" className="hourly-info hourly-condition">
+              </section>
               <section key="hourly-temperature" className="hourly-info hourly-temperature">
                 <h4>Temperature:</h4>
                 <p>0</p>
@@ -120,7 +150,7 @@ export function HourlyForecast(): JSX.Element {
 
     <section id="weather-hourly-forecast">
       <section id="hourly-forecast-container">
-        {getHourlyForecasts(forecastTimestamps)}
+        {getHourlyForecasts(selectedInfo, forecastTimestamps)}
       </section>
     </section>
 
