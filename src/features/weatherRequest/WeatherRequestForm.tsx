@@ -103,7 +103,7 @@ export function WeatherRequestForm(): JSX.Element {
       }}
     >
       <div>
-        <input type="search" id="weather-request-input" name="city" placeholder="City or Postal Code" />
+        <input type="search" id="weather-request-input" name="city" placeholder="City or Postal Code" required />
         <button>Submit</button>
       </div>
     </form>
