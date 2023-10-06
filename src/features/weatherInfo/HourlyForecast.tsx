@@ -24,18 +24,34 @@ const DEFAULT_HOURLY_TIMESTAMPS: ForecastHours = [1, 2, 3, 4, 5];
 
 export function HourlyForecast(): JSX.Element {
 
+  function getTimeZone(selectedInfo: any): string {
+
+    return selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
+
+  }
+
   function getCurrentHour(selectedInfo: any, currentDate: Date): number {
 
     return selectedInfo ? currentDate.getHours() : 0;
 
   }
 
-  function getUpdatedHours(selectedInfo: any): ForecastHours {
+  function getCurrentDate(timeZone: string): Date {
 
-    const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
     const localDate: Date = new Date();
     const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }))
-    const currentHour: number = getCurrentHour(selectedInfo, currentDate);
+
+
+
+    return currentDate;
+
+  }
+
+
+
+  function getUpdatedHours(selectedInfo: any): ForecastHours {
+
+    const currentHour: number = getCurrentHour(selectedInfo, getCurrentDate(getTimeZone(selectedInfo)));
     const updatedHours: ForecastHours = DEFAULT_HOURLY_TIMESTAMPS;
 
 
@@ -55,14 +71,24 @@ export function HourlyForecast(): JSX.Element {
 
   }
 
+  function getForecastDays(selectedInfo: any): { date: string }[] {
+
+    return !selectedInfo ? []
+      : (selectedInfo as { forecast: { forecastday: { date: string }[] } }).forecast.forecastday;
+
+  }
+
+
+
+
   function isBeforeMidday(selectedInfo: any, hourOffset: number = 0): boolean {
 
-    const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
-    const localDate: Date = new Date();
-    const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }))
-    let currentHour: number = (selectedInfo ? currentDate.getHours() : 0) + hourOffset;
+    let currentHour: number = getCurrentHour(selectedInfo, getCurrentDate(getTimeZone(selectedInfo)));
+
+
 
     currentHour = currentHour < 24 ? currentHour : currentHour - 24;
+
 
 
     return currentHour < 12;
@@ -71,11 +97,9 @@ export function HourlyForecast(): JSX.Element {
 
   function getHourlyForecasts(selectedInfo: any, timestamps: ForecastHours): JSX.Element {
 
-    const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
-    const localDate: Date = new Date();
-    const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }));
+    const currentDate = getCurrentDate(getTimeZone(selectedInfo));
     const currentHour: number = getCurrentHour(selectedInfo, currentDate);
-    const selectedForecastDays: { date: string }[] = selectedInfo ? (selectedInfo as { forecast: { forecastday: [] } }).forecast.forecastday : [];
+    const selectedForecastDays: { date: string }[] = getForecastDays(selectedInfo);
     const forecastDaysObj: { [index: number]: {} } = {};
 
 
@@ -90,12 +114,13 @@ export function HourlyForecast(): JSX.Element {
       <>
         {timestamps.map((val, index) => {
 
-          const hourlyForecastDay = new Date(currentDate.toLocaleString("en-US", { timeZone: timeZone }));
+          const hourlyForecastDay = getCurrentDate(getTimeZone(selectedInfo));
           const forecastHour = currentHour + index < 24 ? currentHour + index : currentHour + index - 24;
           let temp: number = 0;
           let humidity: number = 0;
           let wind_dir: string = "N";
           let wind_mph: number = 0;
+
 
 
           hourlyForecastDay.setHours(forecastHour);
@@ -159,7 +184,7 @@ export function HourlyForecast(): JSX.Element {
 
 
 
-  const apiResponses = useSelector((state: AppState) => state.apiResponses);
+  const apiResponses: {}[] = useSelector((state: AppState) => state.apiResponses);
   const currentSelection: number = useSelector((state: AppState) => state.currentSelection);
   const selectedInfo = apiResponses[currentSelection];
   const [forecastTimestamps, setForecastTimestamps]: [ForecastHours, Function] = useState(getUpdatedHours(selectedInfo));
