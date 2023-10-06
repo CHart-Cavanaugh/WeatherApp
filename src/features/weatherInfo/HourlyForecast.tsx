@@ -80,12 +80,8 @@ export function HourlyForecast(): JSX.Element {
 
 
 
-    if (selectedInfo) {
-
-      for (let i = 0; i < 2; i++)
-        forecastDaysObj[(new Date((selectedForecastDays as { date: string }[])[i].date).getDate())] = selectedForecastDays[i];
-
-    }
+    for (let i = 0; i < 2; i++)
+      forecastDaysObj[currentDate.getDate() + i] = selectedForecastDays[i];
 
 
 
@@ -94,7 +90,31 @@ export function HourlyForecast(): JSX.Element {
       <>
         {timestamps.map((val, index) => {
 
-          // const forecastDay: {} = forecastDaysObj[currentDate.getDate()];
+          const hourlyForecastDay = new Date(currentDate.toLocaleString("en-US", { timeZone: timeZone }));
+          const forecastHour = currentHour + index < 24 ? currentHour + index : currentHour + index - 24;
+          let temp: number = 0;
+          let humidity: number = 0;
+          let wind_dir: string = "N";
+          let wind_mph: number = 0;
+
+
+          hourlyForecastDay.setHours(forecastHour);
+
+
+
+          temp = !selectedInfo ? 0 : (
+            forecastDaysObj[hourlyForecastDay.getDate()] as { hour: { temp_f: number }[] }
+          ).hour[forecastHour].temp_f;
+          humidity = !selectedInfo ? 0 : (
+            forecastDaysObj[hourlyForecastDay.getDate()] as { hour: { humidity: number }[] }
+          ).hour[forecastHour].humidity;
+          wind_dir = !selectedInfo ? "N" : (
+            forecastDaysObj[hourlyForecastDay.getDate()] as { hour: { wind_dir: string }[] }
+          ).hour[forecastHour].wind_dir;
+          wind_mph = !selectedInfo ? 0 : (
+            forecastDaysObj[hourlyForecastDay.getDate()] as { hour: { wind_mph: number }[] }
+          ).hour[forecastHour].wind_mph;
+
 
 
 
@@ -105,16 +125,16 @@ export function HourlyForecast(): JSX.Element {
               </section>
               <section key="hourly-temperature" className="hourly-info hourly-temperature">
                 <h4>Temperature:</h4>
-                <p>0</p>
+                <p>{temp} <b>F</b></p>
               </section>
               <section key="hourly-humidity" className="hourly-info hourly-humidity">
                 <h4>Humidity:</h4>
-                <p>0 %</p>
+                <p>{humidity} %</p>
               </section>
               <section key="hourly-wind" className="hourly-info hourly-wind">
                 <h4>Wind:</h4>
                 <p>
-                  <span>"N"</span> - <span>0</span> mph
+                  <span>{wind_dir}</span> - <span>{wind_mph}</span> mph
                 </p>
               </section>
               <footer className="hourly-info hourly-timestamp">
