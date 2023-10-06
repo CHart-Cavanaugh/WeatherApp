@@ -17,7 +17,7 @@ type ForecastHours = [
 
 
 
-const DEFAULT_HOURLY_TIMESTAMPS: ForecastHours = [1, 2, 3, 4, 5];
+const DEFAULT_FORECAST_HOURS: ForecastHours = [1, 2, 3, 4, 5];
 
 
 
@@ -52,7 +52,7 @@ export function HourlyForecast(): JSX.Element {
   function getUpdatedHours(selectedInfo: any): ForecastHours {
 
     const currentHour: number = getCurrentHour(selectedInfo, getCurrentDate(getTimeZone(selectedInfo)));
-    const updatedHours: ForecastHours = DEFAULT_HOURLY_TIMESTAMPS;
+    const updatedHours: ForecastHours = DEFAULT_FORECAST_HOURS;
 
 
 
@@ -187,7 +187,7 @@ export function HourlyForecast(): JSX.Element {
   const apiResponses: {}[] = useSelector((state: AppState) => state.apiResponses);
   const currentSelection: number = useSelector((state: AppState) => state.currentSelection);
   const selectedInfo = apiResponses[currentSelection];
-  const [forecastTimestamps, setForecastTimestamps]: [ForecastHours, Function] = useState(getUpdatedHours(selectedInfo));
+  const [forecastHours, setForecastHours]: [ForecastHours, Function] = useState(getUpdatedHours(selectedInfo));
 
 
 
@@ -195,7 +195,7 @@ export function HourlyForecast(): JSX.Element {
 
     <section id="weather-hourly-forecast">
       <section id="hourly-forecast-container">
-        {getHourlyForecasts(selectedInfo, forecastTimestamps)}
+        {getHourlyForecasts(selectedInfo, forecastHours)}
       </section>
     </section>
 
