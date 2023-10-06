@@ -4,20 +4,20 @@ import { useState } from 'react';
 
 
 
-type ForecastInfoType = number;
-type HourForecasts = [
+type ForecastHour = number;
+type ForecastHours = [
 
-  hourOne: ForecastInfoType,
-  hourTwo: ForecastInfoType,
-  hourThree: ForecastInfoType,
-  hourFour: ForecastInfoType,
-  hourFive: ForecastInfoType
+  hourOne: ForecastHour,
+  hourTwo: ForecastHour,
+  hourThree: ForecastHour,
+  hourFour: ForecastHour,
+  hourFive: ForecastHour
 
 ];
 
 
 
-const DEFAULT_HOURLY_TIMESTAMPS: HourForecasts = [1, 2, 3, 4, 5];
+const DEFAULT_HOURLY_TIMESTAMPS: ForecastHours = [1, 2, 3, 4, 5];
 
 
 
@@ -30,13 +30,13 @@ export function HourlyForecast(): JSX.Element {
 
   }
 
-  function getUpdatedHours(selectedInfo: any): HourForecasts {
+  function getUpdatedHours(selectedInfo: any): ForecastHours {
 
     const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
     const localDate: Date = new Date();
     const currentDate = new Date(localDate.toLocaleString("en-US", { timeZone: timeZone }))
     const currentHour: number = getCurrentHour(selectedInfo, currentDate);
-    const updatedHours: HourForecasts = DEFAULT_HOURLY_TIMESTAMPS;
+    const updatedHours: ForecastHours = DEFAULT_HOURLY_TIMESTAMPS;
 
 
 
@@ -69,7 +69,7 @@ export function HourlyForecast(): JSX.Element {
 
   }
 
-  function getHourlyForecasts(selectedInfo: any, timestamps: HourForecasts): JSX.Element {
+  function getHourlyForecasts(selectedInfo: any, timestamps: ForecastHours): JSX.Element {
 
     const timeZone = selectedInfo ? (selectedInfo as { location: { tz_id: string } }).location.tz_id : "Europe/London";
     const localDate: Date = new Date();
@@ -162,7 +162,7 @@ export function HourlyForecast(): JSX.Element {
   const apiResponses = useSelector((state: AppState) => state.apiResponses);
   const currentSelection: number = useSelector((state: AppState) => state.currentSelection);
   const selectedInfo = apiResponses[currentSelection];
-  const [forecastTimestamps, setForecastTimestamps]: [HourForecasts, Function] = useState(getUpdatedHours(selectedInfo));
+  const [forecastTimestamps, setForecastTimestamps]: [ForecastHours, Function] = useState(getUpdatedHours(selectedInfo));
 
 
 
