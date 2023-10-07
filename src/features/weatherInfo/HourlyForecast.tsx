@@ -83,7 +83,7 @@ export function HourlyForecast(): JSX.Element {
 
   function isBeforeMidday(selectedInfo: any, hourOffset: number = 0): boolean {
 
-    let currentHour: number = getCurrentHour(selectedInfo, getCurrentDate(getTimeZone(selectedInfo)));
+    let currentHour: number = getCurrentHour(selectedInfo, getCurrentDate(getTimeZone(selectedInfo))) + hourOffset;
 
 
 
