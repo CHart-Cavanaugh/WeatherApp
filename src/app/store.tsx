@@ -1,5 +1,6 @@
 import { Store, configureStore } from "@reduxjs/toolkit";
 
+import refreshCountReducer from "./slices/refreshCountSlice";
 import submittedValueReducer from "./slices/submittedValueSlice";
 import apiResponseReducer from "./slices/apiResponsesSlice";
 import currentSelectionReducer from "./slices/currentSelectionSlice";
@@ -11,6 +12,7 @@ export const store: Store = configureStore({
 
   reducer: {
 
+    refreshCount: refreshCountReducer,
     submittedValue: submittedValueReducer,
     apiResponses: apiResponseReducer,
     currentSelection: currentSelectionReducer,
@@ -22,6 +24,7 @@ export const store: Store = configureStore({
 
 export interface AppState {
 
+  refreshCount: number,
   submittedValue: string,
   testSubmissions: string[],
   apiResponses: {}[],
