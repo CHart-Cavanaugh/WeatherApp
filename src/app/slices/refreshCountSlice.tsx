@@ -8,7 +8,7 @@ const refreshCountSlice = createSlice({
   initialState: 0,
   reducers: {
 
-    updateRefreshCount: (state) => ++state
+    updateRefreshCount: state => ++state
 
   }
 
