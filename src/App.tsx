@@ -1,17 +1,12 @@
 import { useState, useEffect } from 'react';
 import './App.scss';
 import { WeatherInterface } from './features/appInterface/WeatherInterface';
-import { useSelector, useDispatch } from 'react-redux';
-import { updateRefreshCount } from './app/slices/refreshCountSlice';
-import { AppState } from './app/store';
 
 
 
 function App(): JSX.Element {
 
   const [appStatus, setAppStatus] = useState(true);
-  let refreshCount: number = useSelector((state: AppState) => state.refreshCount);
-  const dispatch = useDispatch();
   const tempContent = (
     <h2 id="temp-content">status: UNDER_CONSTRUCTION</h2>
   );
@@ -55,33 +50,7 @@ function App(): JSX.Element {
 
   }, []);
 
-  useEffect(() => {
 
-    const currentDate = new Date();
-    const modifiedDate = new Date();
-
-
-
-    modifiedDate.setHours(modifiedDate.getHours() + 1);
-    modifiedDate.setMinutes(0);
-    modifiedDate.setSeconds(0);
-    modifiedDate.setMilliseconds(0);
-
-
-
-    setTimeout(() => {
-
-      dispatch(updateRefreshCount());
-
-      setInterval(() => {
-
-        dispatch(updateRefreshCount());
-
-      }, 60 * 60 * 1000);
-
-    }, (modifiedDate.getTime() - currentDate.getTime()));
-
-  }, []);
 
   useEffect(() => {
 
