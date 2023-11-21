@@ -216,28 +216,26 @@ export function WeatherInterface(): JSX.Element {
 
   /* - - - - - - - - - - -  Data Logging  - - - - - - - - - - - */
 
+  // useEffect(() => {
 
+  //   console.clear();
 
-  useEffect(() => {
+  //   console.log("Submitted Value: \n");
+  //   console.log(submittedValue);
+  //   console.log("\n");
 
-    console.clear();
+  //   // console.log("Test Submissions: \n");
+  //   // console.log(testSubmissions);
+  //   // console.log("\n");
 
-    console.log("Submitted Value: \n");
-    console.log(submittedValue);
-    console.log("\n");
+  //   console.log("API Responses: \n");
+  //   console.log(apiResponses);
+  //   // console.log("\n");
 
-    // console.log("Test Submissions: \n");
-    // console.log(testSubmissions);
-    // console.log("\n");
+  //   // console.log("Selection (By Index): \n");
+  //   // console.log(currentSelection);
 
-    console.log("API Responses: \n");
-    console.log(apiResponses);
-    // console.log("\n");
-
-    // console.log("Selection (By Index): \n");
-    // console.log(currentSelection);
-
-  }, [submittedValue]);
+  // }, [submittedValue]);
 
   // useEffect(() => {
 
