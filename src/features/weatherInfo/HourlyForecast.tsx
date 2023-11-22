@@ -57,20 +57,20 @@ export function HourlyForecast(): JSX.Element {
 
   useEffect(() => {
 
-    const currentTime = new Date();
-    const timeStamp = (
+    // const currentTime = new Date();
+    // const timeStamp = (
 
-      "[" +
-      (currentTime.getHours() < 10 ? '0' + currentTime.getHours() : currentTime.getHours()) +
-      ":" +
-      (currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()) +
-      "]"
+    //   "[" +
+    //   (currentTime.getHours() < 10 ? '0' + currentTime.getHours() : currentTime.getHours()) +
+    //   ":" +
+    //   (currentTime.getMinutes() < 10 ? '0' + currentTime.getMinutes() : currentTime.getMinutes()) +
+    //   "]"
 
-    );
+    // );
 
 
 
-    console.log(`${timeStamp} Hourly Forecasts Refreshed!`);
+    // console.log(`${timeStamp} Hourly Forecasts Refreshed!`);
 
   }, [refreshCount]);
 
