@@ -274,6 +274,13 @@ function getHourlyForecasts(selectedInfo: any, timestamps: ForecastHours): JSX.E
 
         const hourlyForecastDay = getCurrentDate(getTimeZone(selectedInfo));
         const forecastHour = currentHour + index < 24 ? currentHour + index : currentHour + index - 24;
+        const DEFAULT_CONDITION: Condition = {
+
+          text: "clear",
+          icon: "//cdn.weatherapi.com/weather/64x64/night/113.png",
+
+        };
+        let condition: Condition = DEFAULT_CONDITION;
         let temp: number = 0;
         let humidity: number = 0;
         let wind_dir: string = "N";
@@ -284,7 +291,9 @@ function getHourlyForecasts(selectedInfo: any, timestamps: ForecastHours): JSX.E
         hourlyForecastDay.setHours(forecastHour);
 
 
-
+        condition = !selectedInfo ? DEFAULT_CONDITION : (
+          forecastDaysObj[hourlyForecastDay.getDate()] as { hour: { condition: Condition }[] }
+        ).hour[forecastHour].condition;
         temp = !selectedInfo ? 0 : (
           forecastDaysObj[hourlyForecastDay.getDate()] as { hour: { temp_f: number }[] }
         ).hour[forecastHour].temp_f;
@@ -305,6 +314,12 @@ function getHourlyForecasts(selectedInfo: any, timestamps: ForecastHours): JSX.E
 
           <div key={`hour-forecast-${index}`}>
             <section key="hourly-condition" className="hourly-info hourly-condition">
+              <figure>
+                <img src={`${condition.icon}`} alt="" />
+                {/* <figcaption>
+                  {condition.text}
+                </figcaption> */}
+              </figure>
             </section>
             <section key="hourly-temperature" className="hourly-info hourly-temperature">
               <h4>Temperature:</h4>
