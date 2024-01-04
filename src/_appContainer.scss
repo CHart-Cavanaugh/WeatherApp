@@ -1,3 +1,15 @@
+// $app-bg: hsl(220, 60%, 70%);
+$app-bg: linear-gradient(60deg,
+    hsl(0, 0%, 0%),
+    hsl(240, 50%, 18%) 20%,
+    hsl(300, 50%, 13%),
+    hsl(300, 50%, 13%),
+    hsl(240, 50%, 18%) 80%,
+    hsl(0, 0%, 0%),
+  );
+
+
+
 #app-container,
 #app-container * {
 
@@ -9,7 +21,7 @@
 
   height: 100dvh;
   width: 100dvw;
-  background: hsl(220, 50%, 60%);
+  background: $app-bg !important;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -22,7 +34,7 @@
 
   #app-container {
 
-    border: 25px double hsl(220, 50%, 30%);
+    border: none !important;
 
   }
 
