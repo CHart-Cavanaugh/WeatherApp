@@ -67,7 +67,9 @@ export function WeatherHeader(): JSX.Element {
               Condition:
             </h4> */}
             <figure>
-              <img src={infoAccessToolkit.getCurrentCondition(selectedInfo).icon} alt="current condition" />
+              <div className="current-condition-image">
+                <img src={infoAccessToolkit.getCurrentCondition(selectedInfo).icon} alt="current condition" />
+              </div>
               <figcaption id="current-condition-val"
                 className="info-val"
               >
