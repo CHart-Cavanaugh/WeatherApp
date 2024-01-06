@@ -5,11 +5,11 @@ import { useEffect } from "react";
 
 import { unselect } from "../../app/slices/currentSelectionSlice";
 
-import { WeatherRequestSidebar } from "./../weatherRequest/WeatherRequestSidebar";
-import { WeatherInformation } from "./../weatherInfo/WeatherInformation";
+import { InterfaceMessages } from '../interfaceMessages/InterfaceMessages';
 import { InterfaceTabs } from "./../interfaceTabs/InterfaceTabs";
 
-
+import { WeatherRequestSidebar } from "./../weatherRequest/WeatherRequestSidebar";
+import { WeatherInformation } from "./../weatherInfo/WeatherInformation";
 
 
 
@@ -248,11 +248,10 @@ export function WeatherInterface(): JSX.Element {
 
   /* - - - - - - - - - - Component Rendering - - - - - - - - - - */
 
-
-
   return (
 
     <main id="weather-interface">
+      <InterfaceMessages />
       <InterfaceTabs
         setTabOneActive={interfaceControls.interfaceTabs.setTabOneActive}
         setTabTwoActive={interfaceControls.interfaceTabs.setTabTwoActive}

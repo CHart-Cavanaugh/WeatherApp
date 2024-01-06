@@ -1,14 +1,13 @@
 @import "./_tempContent";
-
 @import "./_appContainer";
 
 @import "./features/appInterface/_weatherInterface";
+@import "./features/interfaceMessages/interfaceMessages";
+@import "./features/interfaceTabs/_interfaceTabs";
 
 @import "./features/weatherInfo/_weatherInformation";
 @import "./features/weatherInfo/_weatherHeader";
 @import "./features/weatherInfo/_hourlyForecast";
-
-@import "./features/interfaceTabs/_interfaceTabs";
 
 @import "./features/weatherRequest/_weatherRequestSidebar";
 @import "./features/weatherRequest/_weatherRequestForm";
