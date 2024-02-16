@@ -5,7 +5,7 @@ import { useEffect } from "react";
 
 import { unselect } from "../../app/slices/currentSelectionSlice";
 
-import { InterfaceMessages } from '../interfaceMessages/InterfaceMessages';
+import { MessageOverlay } from '../messageOverlay/MessageOverlay';
 import { InterfaceTabs } from "./../interfaceTabs/InterfaceTabs";
 
 import { WeatherRequestSidebar } from "./../weatherRequest/WeatherRequestSidebar";
@@ -251,7 +251,7 @@ export function WeatherInterface(): JSX.Element {
   return (
 
     <main id="weather-interface">
-      <InterfaceMessages />
+      <MessageOverlay />
       <InterfaceTabs
         setTabOneActive={interfaceControls.interfaceTabs.setTabOneActive}
         setTabTwoActive={interfaceControls.interfaceTabs.setTabTwoActive}
