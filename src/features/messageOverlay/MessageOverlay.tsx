@@ -66,40 +66,40 @@ export function MessageOverlay() {
 
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    setTimeout(() => {
+  //   setTimeout(() => {
 
-      toggleMessageOverlay();
-
-
-
-      setTimeout(() => {
-
-        setWindowType("error");
-        toggleMessageWindow();
+  //     toggleMessageOverlay();
 
 
 
-        setTimeout(() => {
+  //     setTimeout(() => {
 
-          toggleMessageWindow();
+  //       setWindowType("error");
+  //       toggleMessageWindow();
 
 
 
-          setTimeout(() => {
+  //       setTimeout(() => {
 
-            toggleMessageOverlay();
+  //         toggleMessageWindow();
 
-          }, 2000);
 
-        }, 2000);
 
-      }, 2000);
+  //         setTimeout(() => {
 
-    }, 2000);
+  //           toggleMessageOverlay();
 
-  }, []);
+  //         }, 2000);
+
+  //       }, 2000);
+
+  //     }, 2000);
+
+  //   }, 2000);
+
+  // }, []);
 
 
 
